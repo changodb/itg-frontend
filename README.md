@@ -1,4 +1,20 @@
+# In The Groove Packs Front-End
+Source code for In The Groove / StepMania packs database, containing song information by pack.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+
+## Installing
+From the Terminal, clone this repo onto your computer with:
+
+```
+git clone https://github.com/changodb/itg-frontend
+```
+
+Move into the new directory:
+
+```
+cd itg-frontend/
+```
 
 ## Available Scripts
 
@@ -22,20 +38,7 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 Builds the app for production to the `build` folder.<br />
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
 ## Learn More
 
@@ -43,26 +46,17 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+## Built With
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+* Create React App
+* Redux
 
-### Analyzing the Bundle Size
+## Contributors
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+* **Lewis King** - [Github](https://github.com/lewisisgood)
+* **Gene Peters** - [Github](https://github.com/gene-telligent)
+* **Chandler Wyatt** - [Github](https://github.com/chandlerwyatt)
 
-### Making a Progressive Web App
+## Acknowledgements
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+[This wonderful site was used](https://search.stepmaniaonline.net/) as inspiration.
