@@ -8,6 +8,8 @@ export const simfilePropType = {
   packName: PropTypes.string.isRequired,
   packLink: PropTypes.string,
   difficulty: PropTypes.objectOf(PropTypes.number).isRequired,
+  /* "expanded" is to be used when the user clicks on a particular simfile
+  (from a summary list) and it expands outwards with details*/
   expanded: PropTypes.bool.isRequired
 }
 
