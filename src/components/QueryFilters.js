@@ -8,7 +8,7 @@ import QueryFilter from './QueryFilter';
 export default ({ queryFilters, onSubmit, onValueChange, onFieldChange, onAddQueryFilter, onRemoveQueryFilter }) => {
   const filters = queryFilters.map((filter, index) => (
     <li key={index.toString()}>
-      {(index === 0) ? null : 
+      {(index === 0) ? null :
         <RemoveIcon onClick={() => onRemoveQueryFilter(index)} />
       }
       <QueryFilter
@@ -26,7 +26,7 @@ export default ({ queryFilters, onSubmit, onValueChange, onFieldChange, onAddQue
       <ul>
         {filters}
       </ul>
-      <Button variant='contained' onClick={() => onSubmit()}>
+      <Button variant='contained' style={{marginLeft: '1.5em'}} onClick={() => onSubmit()}>
         Submit
       </Button>
     </form>
