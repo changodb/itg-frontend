@@ -5,6 +5,10 @@ import { Button } from '@material-ui/core'
 import { queryFilterPropType } from '../constants/propTypes';
 import QueryFilter from './QueryFilter';
 
+/*
+TODO: Remove bullet points from the generated list elements in `ul`
+TODO: Ensure + button only appears once, at the end of the list
+*/
 export default ({ queryFilters, onSubmit, onValueChange, onFieldChange, onAddQueryFilter, onRemoveQueryFilter }) => {
   const filters = queryFilters.map((filter, index) => (
     <li key={index.toString()}>
