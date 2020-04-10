@@ -16,7 +16,7 @@ export default ({ queryFilters, onSubmit, onValueChange, onFieldChange, onAddQue
         <RemoveIcon onClick={() => onRemoveQueryFilter(index)} />
       }
       <QueryFilter
-        id={index}
+        idx={index}
         field={filter.field}
         value={filter.value}
         onValueChange={onValueChange}
