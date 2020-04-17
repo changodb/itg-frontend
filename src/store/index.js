@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import ReduxThunk from 'redux-thunk';
+import thunk from 'redux-thunk';
 import state from './state';
 import rootReducer from '../reducers';
 
