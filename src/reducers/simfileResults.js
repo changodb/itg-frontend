@@ -1,6 +1,9 @@
 import { createReducer } from '@reduxjs/toolkit';
 import { submitQuery } from '../actions';
-import { reduxForm, Field } from 'redux-form'
+import { DEFAULT_QUERY_FILTER } from '../constants';
+import state from '../store/state';
 
 // Dummy reducer; does nothing.
-export default (state=[], action) => state;
+export default createReducer(
+    state.simfileResults, {}
+);

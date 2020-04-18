@@ -3,6 +3,7 @@ import './App.css';
 import { Provider } from 'react-redux';
 import store from './store'
 import QueryFilters from './containers/QueryFilters';
+import SimfileResults from './containers/SimfileResults';
 import Header from './components/Header';
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
 	  <div>
   		<Header />
   		<QueryFilters />
+		<SimfileResults />
   	  </div>
 	</Provider>
   );
