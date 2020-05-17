@@ -4,6 +4,7 @@
 
 body {
   background-color: #fff0e6;
+
 }
 
 .App-logo {
@@ -40,4 +41,11 @@ body {
   100% {
     transform: translateY(0px)
   }
+}
+
+ul {
+  list-style: none;
+}
+.divider {
+  margin-top: 10px !important
 }
