@@ -11,7 +11,7 @@ import { StylesProvider } from '@material-ui/core/styles';
 function App() {
   return (
     <StylesProvider injectFirst>
-      	<Provider store={store}>'
+      	<Provider store={store}>
             <div className='top-container'>
         	  <div className='App-header'>
           		<Header />
