@@ -12,7 +12,7 @@ const queryFieldMenuItems = Object.entries(QUERY_FIELDS).map( ([key, value]) => 
 export default ({ idx, field, value, onValueChange, onFieldChange }) => {
 
   return (
-    <div>
+    <div className="queryfield">
       <FormControl>
         <Select
           className='field-select'
@@ -20,12 +20,12 @@ export default ({ idx, field, value, onValueChange, onFieldChange }) => {
           onChange={(event) => onFieldChange(idx, event.target.value)}>
           {queryFieldMenuItems}
         </Select>
-      </FormControl>  
+      </FormControl>
       <FormControl>
         <TextField
           className='value-input'
           value={value}
-          onChange={(event) => onValueChange(idx, event.target.value)} 
+          onChange={(event) => onValueChange(idx, event.target.value)}
         />
       </FormControl>
     </div>

@@ -5,15 +5,10 @@ import { Button } from '@material-ui/core'
 import { queryFilterPropType } from '../constants/propTypes';
 import QueryFilter from './QueryFilter';
 
-/*
-TODO: Remove bullet points from the generated list elements in `ul`
-*/
 export default ({ queryFilters, onSubmit, onValueChange, onFieldChange, onAddQueryFilter, onRemoveQueryFilter }) => {
   const filters = queryFilters.map((filter, index) => (
     <li key={index.toString()}>
-      {(index === 0) ? null :
-        <RemoveIcon onClick={() => onRemoveQueryFilter(index)} />
-      }
+
       <QueryFilter
         idx={index}
         field={filter.field}
@@ -22,6 +17,9 @@ export default ({ queryFilters, onSubmit, onValueChange, onFieldChange, onAddQue
         onFieldChange={onFieldChange}
       />
       <AddIcon onClick={() => onAddQueryFilter(index)} />
+      {(index === 0) ? null :
+        <RemoveIcon onClick={() => onRemoveQueryFilter(index)} />
+      }
     </li>
   ));
   return (
