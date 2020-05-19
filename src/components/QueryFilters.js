@@ -26,12 +26,12 @@ export default ({ queryFilters, onSubmit, onValueChange, onFieldChange, onAddQue
   ));
   return (
     <form>
-      <ul>
-        {filters}
-      </ul>
-      <Button variant='contained' style={{marginLeft: '1.5em'}} onClick={() => onSubmit()}>
+      <Button className='submitButton' variant='contained' style={{marginLeft: '1em', marginTop: '1em'}} onClick={() => onSubmit()}>
         Submit
       </Button>
+      <ul className='queryContainer'>
+        {filters}
+      </ul>
     </form>
   )
 };

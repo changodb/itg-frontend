@@ -16,7 +16,7 @@ function App() {
         	  <div className='header'>
           		<Header />
               </div>
-              <div className='queryContainer'>
+              <div>
           		<QueryFilters />
               </div>
             </div>

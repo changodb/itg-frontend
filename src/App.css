@@ -2,17 +2,29 @@ body {
   background-color: #DBB9FC;
   color: #280063;
 }
+ul {
+    list-style-type: none;
+}
 .topContainer {
+  max-height: 164px;
   display: flex;
 }
 .header {
 }
 .queryContainer {
+    max-height: 123px;
+    display: flex;
+    flex-flow: column wrap;
 }
 .queryFilters {
   display: flex;
   align-items: center;
   flex-flow: row wrap;
+
+}
+.submitButton {
+  position: relative;
+  align-items: flex-start;
 }
 .resultsContainer {
 }
