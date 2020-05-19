@@ -6,7 +6,7 @@ export default {
 		   "bpm":69,
 		   "packName":"Foobar",
 		   "difficulty":{
-		      "easy":3
+		      "easy":3,
 		   },
 		   "expanded":false
 		},
@@ -16,7 +16,7 @@ export default {
 		   "bpm":420,
 		   "packName":"Rackem",
 		   "difficulty":{
-		      "oni":13
+		      "oni":13,
 		   },
 		   "expanded":false
 		},
