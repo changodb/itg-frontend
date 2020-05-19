@@ -56,6 +56,7 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 * **Lewis King** - [Github](https://github.com/lewisisgood)
 * **Gene Peters** - [Github](https://github.com/gene-telligent)
 * **Chandler Wyatt** - [Github](https://github.com/chandlerwyatt)
+* **Ryan Graham** - [Github](https://github.com/ryanxgraham)
 
 ## Acknowledgements
 
