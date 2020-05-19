@@ -1,50 +1,97 @@
 import React, { Component } from 'react';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
+import PropTypes from 'prop-types';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
 import MusicNoteIcon from '@material-ui/icons/MusicNote';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
 import Divider from '@material-ui/core/Divider';
-import Collapse from '@material-ui/core/Collapse';
-import ExpandLess from '@material-ui/icons/ExpandLess';
-import ExpandMore from '@material-ui/icons/ExpandMore';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TablePagination from '@material-ui/core/TablePagination';
+import TableRow from '@material-ui/core/TableRow';
 
 export default ({ simfileResults }) => {
+    const columns = [
+        {id: 'artist', label: 'Artist Name', minWidth: 170 },
+        {id: 'track', label: 'Track Name', minWidth: 170 },
+        {id: 'bpm', label: 'BPM', minWidth: 170 },
+        {id: 'pack', label: 'Pack Name', minWidth: 170 },
+        {id: 'difficulty', label: 'Difficulties', minWidth: 170 },
+    ];
+    function createData(artist, track, bpm, pack) {
+        return {artist, track, bpm, pack};
+    }
 
-    const [open, setOpen] = React.useState(false);
-    const handleClick = () => {
-        setOpen(!open);
-    };
+    const rows =
+        simfileResults.map(
+            (simfile, index) => (
+                simfile.songArtist, simfile.songName, simfile.bpm, simfile.packName
+            )
+        );
+    function StickyHeadTable() {
+        const [page, setPage] = React.useState(0);
+        const [rowsPerPage, setRowsPerPage] = React.useState(10);
 
-    const results = simfileResults.map(
-        (simfile, index) => (
+        const handleChangePage = (event, newPage) => {
+            setPage(newPage);
+        };
 
-            <ListItem button onClick={handleClick} key={index.toString()}>
-                <ListItemIcon>
-                    <MusicNoteIcon />
-                </ListItemIcon>
-                <span className='artist'> Artist : "{simfile.songArtist}"</span>
-                <Divider orientation="vertical" flexItem />
-                <span className='track'>Track : "{simfile.songName}"</span>
-                <Divider orientation="vertical" flexItem />
-                <span className='bpm'>BPM : {simfile.bpm}</span>
-                <Divider orientation="vertical" flexItem />
-                <span className='pack'>Pack : {simfile.packName}</span>
-                <Divider orientation="vertical" flexItem />
-                <span className='difficulty'>{open ? <ExpandMore /> : <ExpandLess />}
-                Difficulty :
-                <Collapse in={open} timeout='auto' unmountOnExit>
-                    {JSON.stringify(simfile.difficulty, null, 1)}
-                </Collapse>
-                </span>
+        const handleChangeRowsPerPage = (event) => {
+            setRowsPerPage(+event.target.value);
+            setPage(0);
+        };
 
-            </ListItem>
-    ));
-
+        return (
+            <div>
+                <TableContainer>
+                    <Table simfileTable aria-label='simfile table'>
+                        <TableHead>
+                            <TableRow>
+                                {columns.map((column) =>
+                                    <TableCell
+                                        key={column.id}
+                                        align={column.align}
+                                        style={{ minWidth: column.minWidth }}
+                                    >
+                                        {column.label}
+                                    </TableCell>
+                                )}
+                            </TableRow>
+                        </TableHead>
+                        <TableBody>
+                            {rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => {
+                              return (
+                                  <TableRow hover role="checkbox">
+                                    {columns.map((column) => {
+                                      const value = row[column.id];
+                                      return (
+                                        <TableCell key={column.id} align={column.align}>
+                                          {column.format}
+                                        </TableCell>
+                                      );
+                                    })}
+                                    </TableRow>
+                                );
+                              })}
+                        </TableBody>
+                    </Table>
+                </TableContainer>
+                <TablePagination
+                rowsPerPageOptions={[10, 25, 100]}
+                component="div"
+                count={rows.length}
+                rowsPerPage={rowsPerPage}
+                page={page}
+                onChangePage={handleChangePage}
+                onChangeRowsPerPage={handleChangeRowsPerPage}
+                />
+            </div>
+        );
+    }
     return (
         <div>
-            <List>
-                {results}
-            </List>
-        </div>)
+            <StickyHeadTable />
+        </div>
+    )
 }

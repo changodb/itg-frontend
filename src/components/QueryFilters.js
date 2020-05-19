@@ -9,7 +9,9 @@ import Divider from '@material-ui/core/Divider';
 export default ({ queryFilters, onSubmit, onValueChange, onFieldChange, onAddQueryFilter, onRemoveQueryFilter }) => {
   const filters = queryFilters.map((filter, index) => (
     <li key={index.toString()}  className="queryFilters">
-      <AddIcon onClick={() => onAddQueryFilter(index)} />
+      <AddIcon
+            onClick={() => onAddQueryFilter(index)}
+            disabled={index >= 6} />
       <Divider orientation="vertical" flexItem />
       <QueryFilter
         idx={index}
