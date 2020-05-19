@@ -5,28 +5,37 @@ import ListItemText from '@material-ui/core/ListItemText';
 import MusicNoteIcon from '@material-ui/icons/MusicNote';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import Divider from '@material-ui/core/Divider';
-import { Button } from '@material-ui/core'
-
+import Collapse from '@material-ui/core/Collapse';
+import ExpandLess from '@material-ui/icons/ExpandLess';
+import ExpandMore from '@material-ui/icons/ExpandMore';
 
 export default ({ simfileResults }) => {
 
     const [open, setOpen] = React.useState(false);
+    const handleClick = () => {
+        setOpen(!open);
+    };
 
     const results = simfileResults.map(
         (simfile, index) => (
-            <ListItem key={index.toString()}>
+
+            <ListItem button onClick={handleClick} key={index.toString()}>
                 <ListItemIcon>
                     <MusicNoteIcon />
                 </ListItemIcon>
-                Artist : {simfile.songArtist}
+                Artist : "{simfile.songArtist}"
                 <Divider orientation="vertical" flexItem />
-                Track : {simfile.songName}
+                Track : "{simfile.songName}"
                 <Divider orientation="vertical" flexItem />
                 BPM : {simfile.bpm}
                 <Divider orientation="vertical" flexItem />
                 Pack : {simfile.packName}
                 <Divider orientation="vertical" flexItem />
-                {JSON.stringify(simfile.difficulty, null, 1)}
+                {open ? <ExpandLess /> : <ExpandMore />}
+                Difficulty :
+                <Collapse in={open} timeout='auto' unmountOnExit>
+                    {JSON.stringify(simfile.difficulty, null, 1)}
+                </Collapse>
 
             </ListItem>
     ));

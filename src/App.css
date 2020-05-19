@@ -1,53 +1,20 @@
-.App {
-  text-align: center;
-}
-
 body {
   background-color: #DBB9FC;
   color: #280063;
-
 }
-
-ul {
-  list-style: none;
-}
-
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-float infinite 3s ease-in-out;
-  }
-}
-.top-container {
+.topContainer {
   display: flex;
-  min-height: 315px
- }
-.App-header {
-  flex-direction: row;
-  align-items: left;
-  justify-content: left;
-  font-size: calc(10px + 2vmin);
 }
-
-.App-link {
-  color: rgb(112, 76, 182);
+.header {
 }
-
-@keyframes App-logo-float {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(10px)
-  }
-  100% {
-    transform: translateY(0px)
-  }
+.queryContainer {
+}
+.queryFilters {
+  display: flex;
+  align-items: center;
+  flex-flow: row wrap;
+}
+.resultsContainer {
 }
 .MuiDivider-root {
   margin: 8px;
@@ -59,15 +26,4 @@ ul {
 }
 .MuiButton-contained {
   color: #280063
-}
-.query-filters {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-}
-.hidden {
-    display: none;
-}
-.hidden.open {
-    display: block;
 }

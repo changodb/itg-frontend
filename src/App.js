@@ -12,15 +12,19 @@ function App() {
   return (
     <StylesProvider injectFirst>
       	<Provider store={store}>
-            <div className='top-container'>
-        	  <div className='App-header'>
+            <div className='topContainer'>
+        	  <div className='header'>
           		<Header />
               </div>
+              <div className='queryContainer'>
           		<QueryFilters />
+              </div>
             </div>
+            <div className='resultsContainer'>
                 <Divider />
         		<SimfileResults />
                 <Divider />
+            </div>
     	</Provider>
     </StylesProvider>
   );
