@@ -23,19 +23,20 @@ export default ({ simfileResults }) => {
                 <ListItemIcon>
                     <MusicNoteIcon />
                 </ListItemIcon>
-                Artist : "{simfile.songArtist}"
+                <span className='artist'> Artist : "{simfile.songArtist}"</span>
                 <Divider orientation="vertical" flexItem />
-                Track : "{simfile.songName}"
+                <span className='track'>Track : "{simfile.songName}"</span>
                 <Divider orientation="vertical" flexItem />
-                BPM : {simfile.bpm}
+                <span className='bpm'>BPM : {simfile.bpm}</span>
                 <Divider orientation="vertical" flexItem />
-                Pack : {simfile.packName}
+                <span className='pack'>Pack : {simfile.packName}</span>
                 <Divider orientation="vertical" flexItem />
-                {open ? <ExpandLess /> : <ExpandMore />}
+                <span className='difficulty'>{open ? <ExpandMore /> : <ExpandLess />}
                 Difficulty :
                 <Collapse in={open} timeout='auto' unmountOnExit>
                     {JSON.stringify(simfile.difficulty, null, 1)}
                 </Collapse>
+                </span>
 
             </ListItem>
     ));
