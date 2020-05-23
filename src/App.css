@@ -1,73 +1,76 @@
-.App {
-  text-align: center;
-}
-
 body {
-  background-color: #DBB9FC;
-  color: #280063;
+    background-color: #DBB9FC;
+    color: #5200AC;
 
 }
 
-ul {
-  list-style: none;
+.topContainer {
+    max-height: 164px;
+    display: flex;
 }
-
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header {
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-float infinite 3s ease-in-out;
-  }
+.queryContainer {
+    max-height: 123px;
+    display: flex;
+    flex-flow: column wrap;
 }
-.top-container {
-  display: flex;
-  min-height: 315px
- }
-.App-header {
-  flex-direction: row;
-  align-items: left;
-  justify-content: left;
-  font-size: calc(10px + 2vmin);
-}
+.queryFilters {
+    display: flex;
+    align-items: center;
+    flex-flow: row wrap;
 
-.App-link {
-  color: rgb(112, 76, 182);
 }
-
-@keyframes App-logo-float {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(10px)
-  }
-  100% {
-    transform: translateY(0px)
-  }
+.submitButton {
+    position: relative;
+    align-items: flex-start;
+    background-color: #E4CBFD
+}
+.resultsContainer {
 }
 .MuiDivider-root {
-  margin: 8px;
-  background-color: #111111;
-  display: flex;
+    margin: 8px;
+    background-color: #280063;
+    display: flex;
 }
 .MuiButton-root {
-  color: #280063
+    color: #280063
 }
 .MuiButton-contained {
-  color: #280063
+    color: #280063
 }
-.query-filters {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
+.artist {
+    min-width: 150px;
 }
-.hidden {
-    display: none;
+.track {
+    min-width: 200px;
 }
-.hidden.open {
-    display: block;
+.bpm {
+    min-width: 75px;
+}
+.pack {
+    min-width: 150px;
+}
+.difficulty {
+    display: flex;
+}
+.difficultiesPanel {
+    background-color: #dbb9fc;
+    box-shadow: none;
+    margin-left: 12px;
+    color: #38007F;
+}
+.MuiTableCell-root {
+    border-bottom: 1px solid #BE80FA;
+    color: #38007F;
+    font-size: 1rem
+}
+.MuiTableCell-head {
+    color: #280063;
+    font-weight: bold;
+    line-height: 1rem;
+    font-size: 1.2rem;
+}
+.MuiTablePagination-root {
+    color: #280063;
 }
