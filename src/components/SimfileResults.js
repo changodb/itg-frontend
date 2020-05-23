@@ -12,14 +12,21 @@ import TablePagination from '@material-ui/core/TablePagination';
 import TableRow from '@material-ui/core/TableRow';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
+import ExpansionPanel from '@material-ui/core/ExpansionPanel';
+import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
+import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
+import Typography from '@material-ui/core/Typography';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+
 
 export default ({ simfileResults }) => {
     const columns = [
-        {id: 'songArtist', label: 'Artist Name', minWidth: 170 },
-        {id: 'songName', label: 'Track Name', minWidth: 170 },
-        {id: 'bpm', label: 'BPM', minWidth: 170 },
-        {id: 'packName', label: 'Pack Name', minWidth: 170 },
-        {id: 'difficulties', label: 'Difficulties', minWidth: 170 },
+        {id: 'songArtist', label: 'Artist Name', minWidth: 100, maxWidth: 100 },
+        {id: 'songName', label: 'Track Name', minWidth: 50, maxWidth: 100 },
+        {id: 'bpm', label: 'BPM', minWidth: 50, maxWidth: 100 },
+        {id: 'packName', label: 'Pack Name', minWidth: 50, maxWidth: 100 },
+        {id: 'difficulties', label: 'Difficulties', minWidth: 170, maxWidth: 200 },
     ];
     function createData(artist, track, bpm, pack) {
         return {artist, track, bpm, pack};
@@ -46,7 +53,6 @@ export default ({ simfileResults }) => {
             setRowsPerPage(+event.target.value);
             setPage(0);
         };
-
         return (
             <div>
                 <TableContainer>
@@ -56,8 +62,8 @@ export default ({ simfileResults }) => {
                                 {columns.map((column) =>
                                     <TableCell
                                         key={column.id}
-                                        align={column.align}
-                                        style={{ minWidth: column.minWidth }}
+                                        align="flex-start"
+                                        style={{ minWidth: column.minWidth, maxWidth: column.maxWidth }}
                                     >
                                         {column.label}
                                     </TableCell>
@@ -82,8 +88,22 @@ export default ({ simfileResults }) => {
                                           )
                                       )
                                       return (
-                                        <TableCell key={column.id} align={column.align}>
-                                          {column.id ==='difficulties' ? difflist : value}
+                                        <TableCell key={column.id} align='flex-start'>
+                                          {column.id ==='difficulties' ?
+                                          <ExpansionPanel className='DifficultiesPanel'>
+                                            <ExpansionPanelSummary
+                                                expandIcon={<ExpandMoreIcon />}
+                                            >
+                                              Difficulties
+                                            </ExpansionPanelSummary>
+                                            <ExpansionPanelDetails>
+                                              <Typography>
+                                                {difflist}
+                                              </Typography>
+                                            </ExpansionPanelDetails>
+                                          </ExpansionPanel>
+                                          : value}
+
                                         </TableCell>
                                       );
                                     })}
