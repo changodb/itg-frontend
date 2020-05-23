@@ -10,25 +10,30 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TablePagination from '@material-ui/core/TablePagination';
 import TableRow from '@material-ui/core/TableRow';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
 
 export default ({ simfileResults }) => {
     const columns = [
-        {id: 'artist', label: 'Artist Name', minWidth: 170 },
-        {id: 'track', label: 'Track Name', minWidth: 170 },
+        {id: 'songArtist', label: 'Artist Name', minWidth: 170 },
+        {id: 'songName', label: 'Track Name', minWidth: 170 },
         {id: 'bpm', label: 'BPM', minWidth: 170 },
-        {id: 'pack', label: 'Pack Name', minWidth: 170 },
-        {id: 'difficulty', label: 'Difficulties', minWidth: 170 },
+        {id: 'packName', label: 'Pack Name', minWidth: 170 },
+        {id: 'difficulties', label: 'Difficulties', minWidth: 170 },
     ];
     function createData(artist, track, bpm, pack) {
         return {artist, track, bpm, pack};
     }
 
-    const rows =
-        simfileResults.map(
-            (simfile, index) => (
-                simfile.songArtist, simfile.songName, simfile.bpm, simfile.packName
-            )
-        );
+    var rows = []
+    for (let [key, value] of Object.entries(simfileResults)) {
+            console.log(`${key}: ${value}`);
+            rows.push(value)
+            for (let [inner_key, inner_value] of Object.entries(simfileResults[key])) {
+                console.log(`${inner_key}: ${inner_value}`);
+            }
+    }
+
     function StickyHeadTable() {
         const [page, setPage] = React.useState(0);
         const [rowsPerPage, setRowsPerPage] = React.useState(10);
@@ -62,16 +67,27 @@ export default ({ simfileResults }) => {
                         <TableBody>
                             {rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => {
                               return (
-                                  <TableRow hover role="checkbox">
+                                  <TableRow hover role="checkbox" key={row.songArtist}>
                                     {columns.map((column) => {
-                                      const value = row[column.id];
+                                      var value = row[column.id]
+                                      var diffs = []
+                                      for (const [difficulty, val] of Object.entries(row.difficulties)) {
+                                        diffs.push([difficulty, val])
+                                      }
+                                      var difflist = diffs.map(
+                                          ([difficulty, val]) => (
+                                              <ListItem key={difficulty.toString()}>
+                                                {difficulty} : {val}
+                                              </ListItem>
+                                          )
+                                      )
                                       return (
                                         <TableCell key={column.id} align={column.align}>
-                                          {column.format}
+                                          {column.id ==='difficulties' ? difflist : value}
                                         </TableCell>
                                       );
                                     })}
-                                    </TableRow>
+                                  </TableRow>
                                 );
                               })}
                         </TableBody>

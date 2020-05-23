@@ -5,8 +5,10 @@ export default {
 		   "songArtist":"DJ SNAZZ",
 		   "bpm":69,
 		   "packName":"Foobar",
-		   "difficulty":{
+		   "difficulties":{
 		      "easy":3,
+              "medium": 5,
+              "hard": 9
 		   },
 		   "expanded":false
 		},
@@ -15,8 +17,9 @@ export default {
 		   "songArtist":"T-Pain",
 		   "bpm":420,
 		   "packName":"Rackem",
-		   "difficulty":{
-		      "oni":13,
+		   "difficulties":{
+              "gucci": 8,
+              "oni":13,
 		   },
 		   "expanded":false
 		},
@@ -25,7 +28,7 @@ export default {
 		   "songArtist":"Mac Dre",
 		   "bpm":111,
 		   "packName":"Hoozawutzit",
-		   "difficulty":{
+		   "difficulties":{
 		      "beginner":1,
 		      "light":3,
 		      "standard":5,
