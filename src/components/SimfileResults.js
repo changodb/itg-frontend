@@ -82,13 +82,18 @@ export default ({ simfileResults }) => {
                                       }
                                       var difflist = diffs.map(
                                           ([difficulty, val]) => (
-                                              <ListItem key={difficulty.toString()}>
+                                              <ListItem>
                                                 {difficulty} : {val}
                                               </ListItem>
                                           )
                                       )
                                       return (
-                                        <TableCell key={column.id} align='flex-start'>
+                                        <TableCell
+                                            key={column.id}
+                                            size='small'
+                                            align='flex-start'
+                                            style={{ minWidth: column.minWidth, maxWidth: column.maxWidth }}
+                                            >
                                           {column.id ==='difficulties' ?
                                           <ExpansionPanel className='DifficultiesPanel'>
                                             <ExpansionPanelSummary

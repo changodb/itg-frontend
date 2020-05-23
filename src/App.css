@@ -1,6 +1,7 @@
 body {
     background-color: #DBB9FC;
     color: #280063;
+
 }
 
 .topContainer {
@@ -28,7 +29,7 @@ body {
 }
 .MuiDivider-root {
     margin: 8px;
-    background-color: #111111;
+    background-color: #280063;
     display: flex;
 }
 .MuiButton-root {
@@ -56,4 +57,7 @@ body {
     background-color: #dbb9fc;
     box-shadow: none;
     margin-left: 12px;
+}
+.MuiTableCell-root {
+    border-bottom: 1px solid #BE80FA;
 }
