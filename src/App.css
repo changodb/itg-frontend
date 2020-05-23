@@ -54,7 +54,7 @@ body {
 .difficulty {
     display: flex;
 }
-.DifficultiesPanel {
+.difficultiesPanel {
     background-color: #dbb9fc;
     box-shadow: none;
     margin-left: 12px;

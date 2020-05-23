@@ -31,7 +31,9 @@ export default ({ simfileResults }) => {
     function createData(artist, track, bpm, pack) {
         return {artist, track, bpm, pack};
     }
-
+    String.prototype.toProperCase = function () {
+    return this.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+    };
     var rows = []
     for (let [key, value] of Object.entries(simfileResults)) {
             console.log(`${key}: ${value}`);
@@ -83,7 +85,7 @@ export default ({ simfileResults }) => {
                                       var difflist = diffs.map(
                                           ([difficulty, val]) => (
                                               <ListItem>
-                                                {difficulty} : {val}
+                                                {difficulty.toProperCase()} : {val}
                                               </ListItem>
                                           )
                                       )
@@ -95,7 +97,7 @@ export default ({ simfileResults }) => {
                                             style={{ minWidth: column.minWidth, maxWidth: column.maxWidth }}
                                             >
                                           {column.id ==='difficulties' ?
-                                          <ExpansionPanel className='DifficultiesPanel'>
+                                          <ExpansionPanel className='difficultiesPanel'>
                                             <ExpansionPanelSummary
                                                 expandIcon={<ExpandMoreIcon />}
                                             >
