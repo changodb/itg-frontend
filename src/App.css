@@ -1,6 +1,6 @@
 body {
     background-color: #DBB9FC;
-    color: #280063;
+    color: #5200AC;
 
 }
 
@@ -24,6 +24,7 @@ body {
 .submitButton {
     position: relative;
     align-items: flex-start;
+    background-color: #E4CBFD
 }
 .resultsContainer {
 }
@@ -57,7 +58,19 @@ body {
     background-color: #dbb9fc;
     box-shadow: none;
     margin-left: 12px;
+    color: #38007F;
 }
 .MuiTableCell-root {
     border-bottom: 1px solid #BE80FA;
+    color: #38007F;
+    font-size: 1rem
+}
+.MuiTableCell-head {
+    color: #280063;
+    font-weight: bold;
+    line-height: 1rem;
+    font-size: 1.2rem;
+}
+.MuiTablePagination-root {
+    color: #280063;
 }
