@@ -1,13 +1,11 @@
 body {
-  background-color: #DBB9FC;
-  color: #280063;
+    background-color: #DBB9FC;
+    color: #5200AC;
 }
-ul {
-    list-style-type: none;
-}
+
 .topContainer {
-  max-height: 164px;
-  display: flex;
+    max-height: 164px;
+    display: flex;
 }
 .header {
 }
@@ -17,27 +15,29 @@ ul {
     flex-flow: column wrap;
 }
 .queryFilters {
-  display: flex;
-  align-items: center;
-  flex-flow: row wrap;
+    display: flex;
+    align-items: center;
+    flex-flow: row wrap;
 
 }
 .submitButton {
-  position: relative;
-  align-items: flex-start;
+    position: relative;
+    align-items: flex-start;
+    background-color: #E4CBFD
+
 }
 .resultsContainer {
 }
 .MuiDivider-root {
-  margin: 8px;
-  background-color: #111111;
-  display: flex;
+    margin: 8px;
+    background-color: #280063;
+    display: flex;
 }
 .MuiButton-root {
-  color: #280063
+    color: #280063
 }
 .MuiButton-contained {
-  color: #280063
+    color: #280063
 }
 .artist {
     min-width: 150px;
@@ -53,4 +53,24 @@ ul {
 }
 .difficulty {
     display: flex;
+}
+.difficultiesPanel {
+    background-color: #dbb9fc;
+    box-shadow: none;
+    margin-left: 12px;
+    color: #38007F;
+}
+.MuiTableCell-root {
+    border-bottom: 1px solid #BE80FA;
+    color: #38007F;
+    font-size: 1rem
+}
+.MuiTableCell-head {
+    color: #280063;
+    font-weight: bold;
+    line-height: 1rem;
+    font-size: 1.2rem;
+}
+.MuiTablePagination-root {
+    color: #280063;
 }
