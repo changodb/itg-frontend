@@ -1,7 +1,6 @@
 body {
     background-color: #DBB9FC;
     color: #5200AC;
-
 }
 
 .topContainer {
@@ -25,6 +24,7 @@ body {
     position: relative;
     align-items: flex-start;
     background-color: #E4CBFD
+
 }
 .resultsContainer {
 }

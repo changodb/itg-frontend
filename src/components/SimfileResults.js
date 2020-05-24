@@ -51,6 +51,7 @@ export default ({ simfileResults }) => {
             setPage(newPage);
         };
 
+
         const handleChangeRowsPerPage = (event) => {
             setRowsPerPage(+event.target.value);
             setPage(0);

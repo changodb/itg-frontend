@@ -12,6 +12,7 @@ export default ({ queryFilters, onSubmit, onValueChange, onFieldChange, onAddQue
       <AddIcon
             onClick={() => onAddQueryFilter(index)}
             disabled={index >= 6} />
+
       <Divider orientation="vertical" flexItem />
       <QueryFilter
         idx={index}
