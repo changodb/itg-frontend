@@ -1,6 +1,7 @@
 body {
     background-color: #DBB9FC;
     color: #5200AC;
+
 }
 
 .topContainer {
@@ -24,7 +25,6 @@ body {
     position: relative;
     align-items: flex-start;
     background-color: #E4CBFD
-
 }
 .resultsContainer {
 }
@@ -60,6 +60,18 @@ body {
     margin-left: 12px;
     color: #38007F;
 }
+.summaryPanel {
+    min-height: inherit;
+    padding-left: 0;
+}
+.detailsPanel {
+    padding: 0;
+}
+.MuiExpansionPanelSummary-root.Mui-expanded {
+    min-height: 32px;
+    padding: 0, 0, 24, 0;
+    margin: 0;
+}
 .MuiTableCell-root {
     border-bottom: 1px solid #BE80FA;
     color: #38007F;
@@ -73,4 +85,15 @@ body {
 }
 .MuiTablePagination-root {
     color: #280063;
+}
+.MuiTypography-body1 {
+    font-size: 1rem;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 400;
+    line-height: .7;
+    letter-spacing: 0.00938em;
+}
+.MuiListItem-gutters {
+    padding-left: 8px;
+    padding-right: 16px;
 }

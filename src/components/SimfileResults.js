@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
 import MusicNoteIcon from '@material-ui/icons/MusicNote';
-import Divider from '@material-ui/core/Divider';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -10,15 +7,11 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TablePagination from '@material-ui/core/TablePagination';
 import TableRow from '@material-ui/core/TableRow';
-import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
 import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import Typography from '@material-ui/core/Typography';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-
 
 export default ({ simfileResults }) => {
     const columns = [
@@ -26,11 +19,9 @@ export default ({ simfileResults }) => {
         {id: 'songName', label: 'Track Name', minWidth: 50, maxWidth: 100 },
         {id: 'bpm', label: 'BPM', minWidth: 50, maxWidth: 100 },
         {id: 'packName', label: 'Pack Name', minWidth: 50, maxWidth: 100 },
-        {id: 'difficulties', label: 'Difficulties', minWidth: 170, maxWidth: 200 },
+        {id: 'difficulties', label: 'Difficulties', minWidth: 170, maxWidth: 250 },
     ];
-    function createData(artist, track, bpm, pack) {
-        return {artist, track, bpm, pack};
-    }
+
     String.prototype.toProperCase = function () {
     return this.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
     };
@@ -50,7 +41,6 @@ export default ({ simfileResults }) => {
         const handleChangePage = (event, newPage) => {
             setPage(newPage);
         };
-
 
         const handleChangeRowsPerPage = (event) => {
             setRowsPerPage(+event.target.value);
@@ -100,11 +90,12 @@ export default ({ simfileResults }) => {
                                           {column.id ==='difficulties' ?
                                           <ExpansionPanel className='difficultiesPanel'>
                                             <ExpansionPanelSummary
-                                                expandIcon={<ExpandMoreIcon />}
+                                                expandIcon={<MusicNoteIcon />}
+                                                className='summaryPanel'
                                             >
-                                              Difficulties
+
                                             </ExpansionPanelSummary>
-                                            <ExpansionPanelDetails>
+                                            <ExpansionPanelDetails className='detailsPanel'>
                                               <Typography>
                                                 {difflist}
                                               </Typography>
