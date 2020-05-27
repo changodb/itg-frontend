@@ -7,24 +7,25 @@ import SimfileResults from './containers/SimfileResults';
 import Header from './components/Header';
 import Divider from '@material-ui/core/Divider';
 import { StylesProvider } from '@material-ui/core/styles';
-
+import { Grid } from '@material-ui/core';
+import { Container } from '@material-ui/core';
 function App() {
   return (
     <StylesProvider injectFirst>
       	<Provider store={store}>
-            <div className='topContainer'>
-        	  <div className='header'>
-          		<Header />
-              </div>
-              <div>
-          		<QueryFilters />
-              </div>
-            </div>
-            <div className='resultsContainer'>
-                <Divider />
-        		<SimfileResults />
-                <Divider />
-            </div>
+            <Container fixed className="header">
+            	<Header />
+            </Container>
+            <Grid container spacing={1}>
+                <Grid item xs={12}>
+              		<QueryFilters />
+                </Grid>
+                <Grid item xs>
+                    <Divider />
+            		<SimfileResults />
+                    <Divider />
+                </Grid>
+            </Grid>
     	</Provider>
     </StylesProvider>
   );

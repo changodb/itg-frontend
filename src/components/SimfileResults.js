@@ -56,7 +56,7 @@ export default ({ simfileResults }) => {
                                     <TableCell
                                         key={column.id}
                                         align="flex-start"
-                                        style={{ minWidth: column.minWidth, maxWidth: column.maxWidth }}
+
                                     >
                                         {column.label}
                                     </TableCell>
@@ -93,7 +93,6 @@ export default ({ simfileResults }) => {
                                                 expandIcon={<MusicNoteIcon />}
                                                 className='summaryPanel'
                                             >
-
                                             </ExpansionPanelSummary>
                                             <ExpansionPanelDetails className='detailsPanel'>
                                               <Typography>

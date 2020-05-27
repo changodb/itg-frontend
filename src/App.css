@@ -5,25 +5,30 @@ body {
 }
 
 .topContainer {
-    max-height: 164px;
-    display: flex;
 }
 .header {
+    display: flex;
+    justify-content: center;
+    padding: 1em
 }
 .queryContainer {
-    max-height: 123px;
+    min-height: 80px;
+    max-height: 160px;
     display: flex;
+    align-items: flex-start;
     flex-flow: column wrap;
 }
 .queryFilters {
     display: flex;
     align-items: center;
-    flex-flow: row wrap;
+
+    min-width: 385px
 
 }
 .submitButton {
+    margin: 1em;
     position: relative;
-    align-items: flex-start;
+    align-self: left;
     background-color: #E4CBFD
 }
 .resultsContainer {
@@ -38,21 +43,6 @@ body {
 }
 .MuiButton-contained {
     color: #280063
-}
-.artist {
-    min-width: 150px;
-}
-.track {
-    min-width: 200px;
-}
-.bpm {
-    min-width: 75px;
-}
-.pack {
-    min-width: 150px;
-}
-.difficulty {
-    display: flex;
 }
 .difficultiesPanel {
     background-color: #dbb9fc;
