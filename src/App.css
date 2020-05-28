@@ -6,6 +6,8 @@ body {
 
 .topContainer {
     align-items: center;
+    margin: auto;
+    padding: auto;
 }
 .value-input {
     max-width: 100px !important
@@ -38,13 +40,7 @@ body {
     background-color: #E4CBFD
 }
 .resultsContainer {
-    margin: .25rem
-}
 
-.MuiDivider-root {
-    margin: .5rem;
-    background-color: #280063;
-    display: flex;
 }
 .MuiButton-root {
     color: #280063
@@ -104,18 +100,18 @@ body {
     border-radius: 50%;
 }
 @media screen and (max-width: 600px) {
-    .MuiTypography-body1 {
-    font-size: .6rem;
+    .MuiTypography-root {
+    font-size: .55rem;
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-    font-weight: 400;
+    font-weight: 300;
     line-height: 1;
     letter-spacing: 0.00938em;
     }
 }
 
 @media screen and (max-width: 960px) {
-    .MuiTypography-body1 {
-    font-size: .9rem;
+    .MuiTypography-root {
+    font-size: .8rem;
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
     font-weight: 400;
     line-height: 1.0;
@@ -124,8 +120,8 @@ body {
 }
 
 @media screen and (max-width: 1280){
-    .MuiTypography-body1 {
-    font-size: 1rem;
+    .MuiTypography-root {
+    font-size: 1.1rem;
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
     font-weight: 400;
     line-height: 1.2;
