@@ -6,7 +6,7 @@ import { queryFilterPropType } from '../constants/propTypes';
 import QueryFilter from './QueryFilter';
 import Divider from '@material-ui/core/Divider';
 import { Grid } from '@material-ui/core';
-
+import Typography from '@material-ui/core/Typography';
 
 export default ({ queryFilters, onSubmit, onValueChange, onFieldChange, onAddQueryFilter, onRemoveQueryFilter }) => {
   const filters = queryFilters.map((filter, index) => (
@@ -28,15 +28,15 @@ export default ({ queryFilters, onSubmit, onValueChange, onFieldChange, onAddQue
   return (
     <form>
         <Grid container spacing={1}>
-          <Grid item xs={.5}>
+          <Grid item xs={1}>
               <Button className='submitButton' variant='contained'onClick={() => onSubmit()}>
                 Submit
               </Button>
           </Grid>
-          <Grid container item xs={9} spacing={2}>
-            <Grid item xs={1} className='queryContainer'>
-            {filters}
-            </Grid>
+          <Grid item xs={11} className='qfield'>
+            <Typography>
+              {filters}
+            </Typography>
           </Grid>
         </Grid>
     </form>

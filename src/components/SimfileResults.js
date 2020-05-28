@@ -14,12 +14,14 @@ import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import Typography from '@material-ui/core/Typography';
 
 export default ({ simfileResults }) => {
+
+
     const columns = [
-        {id: 'songArtist', label: 'Artist Name', minWidth: 100, maxWidth: 100 },
-        {id: 'songName', label: 'Track Name', minWidth: 50, maxWidth: 100 },
-        {id: 'bpm', label: 'BPM', minWidth: 50, maxWidth: 100 },
-        {id: 'packName', label: 'Pack Name', minWidth: 50, maxWidth: 100 },
-        {id: 'difficulties', label: 'Difficulties', minWidth: 100, maxWidth: 150 },
+        {id: 'songArtist', label: 'Artist Name'},
+        {id: 'songName', label: 'Track Name'},
+        {id: 'bpm', label: 'BPM'},
+        {id: 'packName', label: 'Pack Name'},
+        {id: 'difficulties', label: 'Difficulties'},
     ];
 
     String.prototype.toProperCase = function () {
@@ -35,6 +37,8 @@ export default ({ simfileResults }) => {
     }
 
     function StickyHeadTable() {
+
+
         const [page, setPage] = React.useState(0);
         const [rowsPerPage, setRowsPerPage] = React.useState(10);
 
@@ -47,7 +51,9 @@ export default ({ simfileResults }) => {
             setPage(0);
         };
         return (
+
             <div>
+
                 <TableContainer>
                     <Table simfileTable aria-label='simfile table'>
                         <TableHead>
@@ -56,9 +62,11 @@ export default ({ simfileResults }) => {
                                     <TableCell
                                         key={column.id}
                                         align="flex-start"
-
                                     >
+                                    <Typography>
                                         {column.label}
+                                    </Typography>
+
                                     </TableCell>
                                 )}
                             </TableRow>
@@ -75,8 +83,10 @@ export default ({ simfileResults }) => {
                                       }
                                       var difflist = diffs.map(
                                           ([difficulty, val]) => (
-                                              <ListItem>
-                                                {difficulty.toProperCase()} : {val}
+                                              <ListItem >
+                                                <Typography>
+                                                  {difficulty.toProperCase()} : {val}
+                                                </Typography>
                                               </ListItem>
                                           )
                                       )
@@ -85,7 +95,6 @@ export default ({ simfileResults }) => {
                                             key={column.id}
                                             size='small'
                                             align='flex-start'
-                                            style={{ minWidth: column.minWidth, maxWidth: column.maxWidth }}
                                             >
                                           {column.id ==='difficulties' ?
                                           <ExpansionPanel className='difficultiesPanel'>
@@ -100,8 +109,9 @@ export default ({ simfileResults }) => {
                                               </Typography>
                                             </ExpansionPanelDetails>
                                           </ExpansionPanel>
-                                          : value}
-
+                                          :
+                                          <Typography>{value}</Typography>
+                                            }
                                         </TableCell>
                                       );
                                     })}
