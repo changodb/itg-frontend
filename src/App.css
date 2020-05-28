@@ -5,36 +5,37 @@ body {
 }
 
 .topContainer {
+    margin-left: 1em;
+    margin-right: 1em;
 }
 .header {
     display: flex;
     justify-content: center;
-    padding: 1em
 }
 .queryContainer {
     min-height: 80px;
-    max-height: 160px;
+    max-height: 175px;
     display: flex;
     align-items: flex-start;
     flex-flow: column wrap;
+    margin: .5em
 }
 .queryFilters {
     display: flex;
     align-items: center;
-
-    min-width: 385px
-
+    min-width: 385px;
 }
 .submitButton {
-    margin: 1em;
+    margin: .5em;
     position: relative;
     align-self: left;
     background-color: #E4CBFD
 }
 .resultsContainer {
+    margin: .5em
 }
 .MuiDivider-root {
-    margin: 8px;
+    margin: .5em;
     background-color: #280063;
     display: flex;
 }

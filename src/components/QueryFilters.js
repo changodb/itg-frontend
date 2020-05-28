@@ -35,7 +35,7 @@ export default ({ queryFilters, onSubmit, onValueChange, onFieldChange, onAddQue
                 Submit
               </Button>
           </Grid>
-          <Grid container item xs spacing={2}>
+          <Grid container item xs={9} spacing={2}>
             <Grid item xs={3} className='queryContainer'>
             {filters}
             </Grid>

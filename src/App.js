@@ -13,19 +13,21 @@ function App() {
   return (
     <StylesProvider injectFirst>
       	<Provider store={store}>
+          <Container fixed classname='topContainer'>
             <Container fixed className="header">
             	<Header />
             </Container>
             <Grid container spacing={1}>
-                <Grid item xs={12}>
+                <Grid item xs={6} className='queryContainer'>
               		<QueryFilters />
                 </Grid>
-                <Grid item xs>
+                <Grid item xs={12} className='resultsContainer'>
                     <Divider />
             		<SimfileResults />
                     <Divider />
                 </Grid>
             </Grid>
+          </Container>
     	</Provider>
     </StylesProvider>
   );
