@@ -19,7 +19,7 @@ export default ({ simfileResults }) => {
         {id: 'songName', label: 'Track Name', minWidth: 50, maxWidth: 100 },
         {id: 'bpm', label: 'BPM', minWidth: 50, maxWidth: 100 },
         {id: 'packName', label: 'Pack Name', minWidth: 50, maxWidth: 100 },
-        {id: 'difficulties', label: 'Difficulties', minWidth: 170, maxWidth: 250 },
+        {id: 'difficulties', label: 'Difficulties', minWidth: 100, maxWidth: 150 },
     ];
 
     String.prototype.toProperCase = function () {

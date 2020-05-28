@@ -5,35 +5,36 @@ body {
 }
 
 .topContainer {
-    margin-left: 1em;
-    margin-right: 1em;
+
 }
 .header {
     display: flex;
     justify-content: center;
+    padding: 0
 }
 .queryContainer {
     min-height: 80px;
-    max-height: 175px;
+    max-height: 80px;
     display: flex;
     align-items: flex-start;
     flex-flow: column wrap;
-    margin: .5em
+    margin: 1em
 }
 .queryFilters {
     display: flex;
     align-items: center;
     min-width: 385px;
+    justify-content: left
 }
 .submitButton {
-    margin: .5em;
     position: relative;
     align-self: left;
     background-color: #E4CBFD
 }
 .resultsContainer {
-    margin: .5em
+    margin: .25em
 }
+
 .MuiDivider-root {
     margin: .5em;
     background-color: #280063;
@@ -46,27 +47,35 @@ body {
     color: #280063
 }
 .difficultiesPanel {
+    display: flex;
     background-color: #dbb9fc;
     box-shadow: none;
-    margin-left: 12px;
+    margin: 0;
+    padding: 0;
     color: #38007F;
 }
 .summaryPanel {
     min-height: inherit;
-    padding-left: 0;
+    padding: 0;
 }
 .detailsPanel {
     padding: 0;
 }
 .MuiExpansionPanelSummary-root.Mui-expanded {
     min-height: 32px;
-    padding: 0, 0, 24, 0;
+    padding: 0, 0, 0, 0;
     margin: 0;
+}
+.MuiExpansionPanelSummary-root {
+    display: inline-flex;
+    align-self: flex-start;
 }
 .MuiTableCell-root {
     border-bottom: 1px solid #BE80FA;
     color: #38007F;
-    font-size: 1rem
+    font-size: 1rem;
+    line-height: 1;
+    padding: 0;
 }
 .MuiTableCell-head {
     color: #280063;
@@ -86,5 +95,5 @@ body {
 }
 .MuiListItem-gutters {
     padding-left: 8px;
-    padding-right: 16px;
+    padding-right: 8px;
 }

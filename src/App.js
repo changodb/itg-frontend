@@ -13,7 +13,6 @@ function App() {
   return (
     <StylesProvider injectFirst>
       	<Provider store={store}>
-          <Container fixed classname='topContainer'>
             <Container fixed className="header">
             	<Header />
             </Container>
@@ -22,12 +21,9 @@ function App() {
               		<QueryFilters />
                 </Grid>
                 <Grid item xs={12} className='resultsContainer'>
-                    <Divider />
             		<SimfileResults />
-                    <Divider />
                 </Grid>
             </Grid>
-          </Container>
     	</Provider>
     </StylesProvider>
   );

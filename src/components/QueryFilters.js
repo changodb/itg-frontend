@@ -13,7 +13,6 @@ export default ({ queryFilters, onSubmit, onValueChange, onFieldChange, onAddQue
     <li key={index.toString()}  className="queryFilters">
       <AddIcon onClick={() => onAddQueryFilter(index)} />
 
-      <Divider orientation="vertical" flexItem />
       <QueryFilter
         idx={index}
         field={filter.field}
@@ -21,7 +20,6 @@ export default ({ queryFilters, onSubmit, onValueChange, onFieldChange, onAddQue
         onValueChange={onValueChange}
         onFieldChange={onFieldChange}
       />
-      <Divider orientation="vertical" flexItem />
       {(index === 0) ? null :
         <RemoveIcon onClick={() => onRemoveQueryFilter(index)} />
       }
@@ -36,7 +34,7 @@ export default ({ queryFilters, onSubmit, onValueChange, onFieldChange, onAddQue
               </Button>
           </Grid>
           <Grid container item xs={9} spacing={2}>
-            <Grid item xs={3} className='queryContainer'>
+            <Grid item xs={1} className='queryContainer'>
             {filters}
             </Grid>
           </Grid>
