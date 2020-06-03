@@ -18,11 +18,11 @@ export default ({ simfileResults }) => {
 
 
     const columns = [
-        {id: 'songArtist', label: 'Artist Name'},
-        {id: 'songName', label: 'Track Name'},
+        {id: 'song_artist', label: 'Artist Name'},
+        {id: 'song_name', label: 'Track Name'},
         {id: 'bpm', label: 'BPM'},
         {id: 'packName', label: 'Pack Name'},
-        {id: 'difficulties', label: 'Difficulties'},
+        {id: 'difficulty', label: 'Difficulties'},
     ];
 
     String.prototype.toProperCase = function () {
@@ -79,7 +79,7 @@ export default ({ simfileResults }) => {
                                     {columns.map((column) => {
                                       var value = row[column.id]
                                       var diffs = []
-                                      for (const [difficulty, val] of Object.entries(row.difficulties)) {
+                                      for (const [difficulty, val] of Object.entries(row.difficulty)) {
                                         diffs.push([difficulty, val])
                                       }
                                       var difflist = diffs.map(
@@ -97,7 +97,7 @@ export default ({ simfileResults }) => {
                                             size='small'
                                             align='flex-start'
                                             >
-                                          {column.id ==='difficulties' ?
+                                          {column.id ==='difficulty' ?
                                           <ExpansionPanel className='difficultiesPanel'>
                                             <ExpansionPanelSummary
                                                 expandIcon={<MusicNoteIcon />}

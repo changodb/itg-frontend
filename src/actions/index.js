@@ -31,7 +31,17 @@ export const submitQuery = (queryFilters) => (dispatch) => {
         headers: {
             'Content-Type': 'application/json'
         }
-    }).then(response => {
-        response.json();
+    }).then(response => response.json())
+    .then(data => {
+        // Convert data into something which getMatches
+        // the schema shown in store/state.js#simfileResults
+        console.log(data);
+        return data; // if this is the raw data, this won't work
+    }).then(
+        data => {
+            dispatch(backendQueryDelivered(data));
+        }
+    ).catch(error => {
+        dispatch(backendQueryError(error));
     });
 }
