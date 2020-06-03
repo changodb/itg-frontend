@@ -7,6 +7,7 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TablePagination from '@material-ui/core/TablePagination';
 import TableRow from '@material-ui/core/TableRow';
+import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
@@ -63,7 +64,7 @@ export default ({ simfileResults }) => {
                                         key={column.id}
                                         align="flex-start"
                                     >
-                                    <Typography>
+                                    <Typography variant='h6'>
                                         {column.label}
                                     </Typography>
 
