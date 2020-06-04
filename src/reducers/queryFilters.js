@@ -16,6 +16,7 @@ QueryFilters, potentially with the same field. The index corresponds to the
 + and - buttons exist in the front-end, that will increase the index count by
 1 and splice out 1 element from the array in that index, respectively.
 */
+
 export default createReducer(
   [Object.assign({}, DEFAULT_QUERY_FILTER)],
   {

@@ -1,11 +1,11 @@
 export default {
     simfileResults: [
 	    {
-		   "songName":"My cool song",
-		   "songArtist":"DJ SNAZZ",
+		   "song_name":"My cool song",
+		   "song_artist":"DJ SNAZZ",
 		   "bpm":69,
 		   "packName":"Foobar",
-		   "difficulties":{
+		   "difficulty":{
 		      "easy":3,
               "medium": 5,
               "hard": 9
@@ -13,22 +13,22 @@ export default {
 		   "expanded":false
 		},
 		{
-		   "songName":"Freaknik is Bacc",
-		   "songArtist":"T-Pain",
+		   "song_name":"Freaknik is Bacc",
+		   "song_artist":"T-Pain",
 		   "bpm":420,
 		   "packName":"Rackem",
-		   "difficulties":{
+		   "difficulty":{
               "gucci": 8,
               "oni":13,
 		   },
 		   "expanded":false
 		},
 		{
-		   "songName":"Thizzle DanCE",
-		   "songArtist":"Mac Dre",
+		   "song_name":"Thizzle DanCE",
+		   "song_artist":"Mac Dre",
 		   "bpm":111,
 		   "packName":"Hoozawutzit",
-		   "difficulties":{
+		   "difficulty":{
 		      "beginner":1,
 		      "light":3,
 		      "standard":5,

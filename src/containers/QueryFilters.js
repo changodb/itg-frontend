@@ -12,8 +12,8 @@ const mapStateToProps = (state) => ({
   queryFilters: state.queryFilters
 });
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
-  onSubmit: () => dispatch(submitQuery(ownProps.queryFilters)),
+const mapDispatchToProps = (dispatch) => ({
+  onSubmit: (queryFilters) => dispatch(submitQuery(queryFilters)),
   onAddQueryFilter: (index) => dispatch(queryFilterAdd(index)),
   onRemoveQueryFilter: (index) => dispatch(queryFilterRemove(index)),
   onValueChange: (index, value) => dispatch(queryFilterValueChange({

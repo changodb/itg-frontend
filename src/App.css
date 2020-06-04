@@ -5,33 +5,42 @@ body {
 }
 
 .topContainer {
-    max-height: 164px;
-    display: flex;
+    align-items: center;
+    margin: auto;
+    padding: auto;
+}
+.value-input {
+    max-width: 100px !important
 }
 .header {
+    display: flex;
+    justify-content: center;
+    padding: 0
 }
 .queryContainer {
-    max-height: 123px;
-    display: flex;
+    min-height: 80px;
+    display: inline-flex;
+    align-items: flex-start;
     flex-flow: column wrap;
+    margin: .5rem;
+
 }
 .queryFilters {
     display: flex;
     align-items: center;
-    flex-flow: row wrap;
-
+    margin: auto;
+    padding-left: 75px
+}
+.qfield {
+    flex: 1
 }
 .submitButton {
     position: relative;
-    align-items: flex-start;
+    align-self: left;
     background-color: #E4CBFD
 }
 .resultsContainer {
-}
-.MuiDivider-root {
-    margin: 8px;
-    background-color: #280063;
-    display: flex;
+
 }
 .MuiButton-root {
     color: #280063
@@ -39,61 +48,83 @@ body {
 .MuiButton-contained {
     color: #280063
 }
-.artist {
-    min-width: 150px;
-}
-.track {
-    min-width: 200px;
-}
-.bpm {
-    min-width: 75px;
-}
-.pack {
-    min-width: 150px;
-}
-.difficulty {
-    display: flex;
-}
 .difficultiesPanel {
+    display: flex;
     background-color: #dbb9fc;
     box-shadow: none;
-    margin-left: 12px;
+    margin: 0;
+    padding: 0;
     color: #38007F;
 }
 .summaryPanel {
     min-height: inherit;
-    padding-left: 0;
+    padding: 0;
 }
 .detailsPanel {
     padding: 0;
 }
 .MuiExpansionPanelSummary-root.Mui-expanded {
     min-height: 32px;
-    padding: 0, 0, 24, 0;
+    padding: 0, 0, 0, 0;
     margin: 0;
+}
+.MuiExpansionPanelSummary-root {
+    display: flex;
+    align-self: flex-start;
 }
 .MuiTableCell-root {
     border-bottom: 1px solid #BE80FA;
     color: #38007F;
-    font-size: 1rem
+    line-height: 1;
+    padding: 0;
 }
 .MuiTableCell-head {
     color: #280063;
     font-weight: bold;
-    line-height: 1rem;
-    font-size: 1.2rem;
+    padding: 4px
 }
 .MuiTablePagination-root {
     color: #280063;
 }
-.MuiTypography-body1 {
-    font-size: 1rem;
+.MuiListItem-gutters {
+    padding-left: 4px;
+    padding-right: 4px;
+}
+.MuiIconButton-root {
+    flex: 0 0 auto;
+    color: rgba(0, 0, 0, 0.54);
+    padding: 3px;
+    overflow: visible;
+    text-align: center;
+    transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    border-radius: 50%;
+}
+@media screen and (max-width: 600px) {
+    .MuiTypography-root {
+    font-size: .55rem;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: 0.00938em;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .MuiTypography-root {
+    font-size: .8rem;
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
     font-weight: 400;
-    line-height: .7;
+    line-height: 1.0;
     letter-spacing: 0.00938em;
+    }
 }
-.MuiListItem-gutters {
-    padding-left: 8px;
-    padding-right: 16px;
+
+@media screen and (max-width: 1280){
+    .MuiTypography-root {
+    font-size: 1.1rem;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: 0.00938em;
+    }
 }

@@ -7,6 +7,7 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TablePagination from '@material-ui/core/TablePagination';
 import TableRow from '@material-ui/core/TableRow';
+import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
@@ -14,12 +15,14 @@ import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import Typography from '@material-ui/core/Typography';
 
 export default ({ simfileResults }) => {
+
+
     const columns = [
-        {id: 'songArtist', label: 'Artist Name', minWidth: 100, maxWidth: 100 },
-        {id: 'songName', label: 'Track Name', minWidth: 50, maxWidth: 100 },
-        {id: 'bpm', label: 'BPM', minWidth: 50, maxWidth: 100 },
-        {id: 'packName', label: 'Pack Name', minWidth: 50, maxWidth: 100 },
-        {id: 'difficulties', label: 'Difficulties', minWidth: 170, maxWidth: 250 },
+        {id: 'song_artist', label: 'Artist Name'},
+        {id: 'song_name', label: 'Track Name'},
+        {id: 'bpm', label: 'BPM'},
+        {id: 'packName', label: 'Pack Name'},
+        {id: 'difficulty', label: 'Difficulties'},
     ];
 
     String.prototype.toProperCase = function () {
@@ -35,6 +38,8 @@ export default ({ simfileResults }) => {
     }
 
     function StickyHeadTable() {
+
+
         const [page, setPage] = React.useState(0);
         const [rowsPerPage, setRowsPerPage] = React.useState(10);
 
@@ -47,7 +52,9 @@ export default ({ simfileResults }) => {
             setPage(0);
         };
         return (
+
             <div>
+
                 <TableContainer>
                     <Table simfileTable aria-label='simfile table'>
                         <TableHead>
@@ -56,9 +63,11 @@ export default ({ simfileResults }) => {
                                     <TableCell
                                         key={column.id}
                                         align="flex-start"
-                                        style={{ minWidth: column.minWidth, maxWidth: column.maxWidth }}
                                     >
+                                    <Typography variant='h6'>
                                         {column.label}
+                                    </Typography>
+
                                     </TableCell>
                                 )}
                             </TableRow>
@@ -70,13 +79,15 @@ export default ({ simfileResults }) => {
                                     {columns.map((column) => {
                                       var value = row[column.id]
                                       var diffs = []
-                                      for (const [difficulty, val] of Object.entries(row.difficulties)) {
+                                      for (const [difficulty, val] of Object.entries(row.difficulty)) {
                                         diffs.push([difficulty, val])
                                       }
                                       var difflist = diffs.map(
                                           ([difficulty, val]) => (
-                                              <ListItem>
-                                                {difficulty.toProperCase()} : {val}
+                                              <ListItem >
+                                                <Typography>
+                                                  {difficulty.toProperCase()} : {val}
+                                                </Typography>
                                               </ListItem>
                                           )
                                       )
@@ -85,15 +96,13 @@ export default ({ simfileResults }) => {
                                             key={column.id}
                                             size='small'
                                             align='flex-start'
-                                            style={{ minWidth: column.minWidth, maxWidth: column.maxWidth }}
                                             >
-                                          {column.id ==='difficulties' ?
+                                          {column.id ==='difficulty' ?
                                           <ExpansionPanel className='difficultiesPanel'>
                                             <ExpansionPanelSummary
                                                 expandIcon={<MusicNoteIcon />}
                                                 className='summaryPanel'
                                             >
-
                                             </ExpansionPanelSummary>
                                             <ExpansionPanelDetails className='detailsPanel'>
                                               <Typography>
@@ -101,8 +110,9 @@ export default ({ simfileResults }) => {
                                               </Typography>
                                             </ExpansionPanelDetails>
                                           </ExpansionPanel>
-                                          : value}
-
+                                          :
+                                          <Typography>{value}</Typography>
+                                            }
                                         </TableCell>
                                       );
                                     })}
