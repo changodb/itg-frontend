@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
 import MusicNoteIcon from '@material-ui/icons/MusicNote';
-import Divider from '@material-ui/core/Divider';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -12,25 +9,22 @@ import TablePagination from '@material-ui/core/TablePagination';
 import TableRow from '@material-ui/core/TableRow';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
 import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import Typography from '@material-ui/core/Typography';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-
 
 export default ({ simfileResults }) => {
+
+
     const columns = [
-        {id: 'songArtist', label: 'Artist Name', minWidth: 100, maxWidth: 100 },
-        {id: 'songName', label: 'Track Name', minWidth: 50, maxWidth: 100 },
-        {id: 'bpm', label: 'BPM', minWidth: 50, maxWidth: 100 },
-        {id: 'packName', label: 'Pack Name', minWidth: 50, maxWidth: 100 },
-        {id: 'difficulties', label: 'Difficulties', minWidth: 170, maxWidth: 200 },
+        {id: 'song_artist', label: 'Artist Name'},
+        {id: 'song_name', label: 'Track Name'},
+        {id: 'bpm', label: 'BPM'},
+        {id: 'packName', label: 'Pack Name'},
+        {id: 'difficulty', label: 'Difficulties'},
     ];
-    function createData(artist, track, bpm, pack) {
-        return {artist, track, bpm, pack};
-    }
+
     String.prototype.toProperCase = function () {
     return this.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
     };
@@ -44,6 +38,8 @@ export default ({ simfileResults }) => {
     }
 
     function StickyHeadTable() {
+
+
         const [page, setPage] = React.useState(0);
         const [rowsPerPage, setRowsPerPage] = React.useState(10);
 
@@ -51,13 +47,14 @@ export default ({ simfileResults }) => {
             setPage(newPage);
         };
 
-
         const handleChangeRowsPerPage = (event) => {
             setRowsPerPage(+event.target.value);
             setPage(0);
         };
         return (
+
             <div>
+
                 <TableContainer>
                     <Table simfileTable aria-label='simfile table'>
                         <TableHead>
@@ -66,9 +63,11 @@ export default ({ simfileResults }) => {
                                     <TableCell
                                         key={column.id}
                                         align="flex-start"
-                                        style={{ minWidth: column.minWidth, maxWidth: column.maxWidth }}
                                     >
+                                    <Typography variant='h6'>
                                         {column.label}
+                                    </Typography>
+
                                     </TableCell>
                                 )}
                             </TableRow>
@@ -80,13 +79,15 @@ export default ({ simfileResults }) => {
                                     {columns.map((column) => {
                                       var value = row[column.id]
                                       var diffs = []
-                                      for (const [difficulty, val] of Object.entries(row.difficulties)) {
+                                      for (const [difficulty, val] of Object.entries(row.difficulty)) {
                                         diffs.push([difficulty, val])
                                       }
                                       var difflist = diffs.map(
                                           ([difficulty, val]) => (
-                                              <ListItem>
-                                                {difficulty.toProperCase()} : {val}
+                                              <ListItem >
+                                                <Typography>
+                                                  {difficulty.toProperCase()} : {val}
+                                                </Typography>
                                               </ListItem>
                                           )
                                       )
@@ -95,23 +96,23 @@ export default ({ simfileResults }) => {
                                             key={column.id}
                                             size='small'
                                             align='flex-start'
-                                            style={{ minWidth: column.minWidth, maxWidth: column.maxWidth }}
                                             >
-                                          {column.id ==='difficulties' ?
+                                          {column.id ==='difficulty' ?
                                           <ExpansionPanel className='difficultiesPanel'>
                                             <ExpansionPanelSummary
-                                                expandIcon={<ExpandMoreIcon />}
+                                                expandIcon={<MusicNoteIcon />}
+                                                className='summaryPanel'
                                             >
-                                              Difficulties
                                             </ExpansionPanelSummary>
-                                            <ExpansionPanelDetails>
+                                            <ExpansionPanelDetails className='detailsPanel'>
                                               <Typography>
                                                 {difflist}
                                               </Typography>
                                             </ExpansionPanelDetails>
                                           </ExpansionPanel>
-                                          : value}
-
+                                          :
+                                          <Typography>{value}</Typography>
+                                            }
                                         </TableCell>
                                       );
                                     })}
