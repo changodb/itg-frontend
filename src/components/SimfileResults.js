@@ -13,16 +13,17 @@ import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import Typography from '@material-ui/core/Typography';
+import _ from 'underscore';
 
 export default ({ simfileResults }) => {
 
 
     const columns = [
-        {id: 'song_artist', label: 'Artist Name'},
-        {id: 'song_name', label: 'Track Name'},
+        {id: 'artist', label: 'Artist Name'},
+        {id: 'name', label: 'Track Name'},
         {id: 'bpm', label: 'BPM'},
-        {id: 'pack_name', label: 'Pack Name'},
-        {id: 'difficulty', label: 'Difficulties'},
+        {id: ['pack', 'name'], label: 'Pack Name'},
+        {id: 'difficultyMap', label: 'Difficulties'},
     ];
 
     String.prototype.toProperCase = function () {
@@ -61,7 +62,7 @@ export default ({ simfileResults }) => {
                             <TableRow>
                                 {columns.map((column) =>
                                     <TableCell
-                                        key={column.id}
+                                        key={column.id.toString()}
                                         align="flex-start"
                                     >
                                     <Typography variant='h6'>
@@ -77,9 +78,10 @@ export default ({ simfileResults }) => {
                               return (
                                   <TableRow hover role="checkbox" key={row.songArtist}>
                                     {columns.map((column) => {
-                                      var value = row[column.id]
+                                      var value = _.property(column.id)(row);
                                       var diffs = []
-                                      for (const [difficulty, val] of Object.entries(row.difficulty)) {
+                                      console.log(row);
+                                      for (const [difficulty, val] of Object.entries(row.difficultyMap)) {
                                         diffs.push([difficulty, val])
                                       }
                                       var difflist = diffs.map(
@@ -97,7 +99,7 @@ export default ({ simfileResults }) => {
                                             size='small'
                                             align='flex-start'
                                             >
-                                          {column.id ==='difficulty' ?
+                                          {column.id ==='difficultyMap' ?
                                           <ExpansionPanel className='difficultiesPanel'>
                                             <ExpansionPanelSummary
                                                 expandIcon={<MusicNoteIcon />}

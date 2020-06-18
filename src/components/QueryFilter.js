@@ -4,7 +4,7 @@ import { QUERY_FIELDS } from '../constants/enums';
 
 const queryFieldMenuItems = Object.entries(QUERY_FIELDS).map( ([key, value]) => (
     <MenuItem key={key} value={value}>
-      {key}
+      {value}
     </MenuItem>
   )
 );
