@@ -4,7 +4,7 @@ export default {
 		   "song_name":"My cool song",
 		   "song_artist":"DJ SNAZZ",
 		   "bpm":69,
-		   "packName":"Foobar",
+		   "pack_name":"Foobar",
 		   "difficulty":{
 		      "easy":3,
               "medium": 5,
@@ -16,7 +16,7 @@ export default {
 		   "song_name":"Freaknik is Bacc",
 		   "song_artist":"T-Pain",
 		   "bpm":420,
-		   "packName":"Rackem",
+		   "pack_name":"Rackem",
 		   "difficulty":{
               "gucci": 8,
               "oni":13,
@@ -27,7 +27,7 @@ export default {
 		   "song_name":"Thizzle DanCE",
 		   "song_artist":"Mac Dre",
 		   "bpm":111,
-		   "packName":"Hoozawutzit",
+		   "pack_name":"Hoozawutzit",
 		   "difficulty":{
 		      "beginner":1,
 		      "light":3,
