@@ -21,7 +21,7 @@ export default ({ simfileResults }) => {
         {id: 'song_artist', label: 'Artist Name'},
         {id: 'song_name', label: 'Track Name'},
         {id: 'bpm', label: 'BPM'},
-        {id: 'packName', label: 'Pack Name'},
+        {id: 'pack_name', label: 'Pack Name'},
         {id: 'difficulty', label: 'Difficulties'},
     ];
 
