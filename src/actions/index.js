@@ -18,10 +18,10 @@ export const backendQueryError = createAction('backend/query/error');
 export const submitQuery = (queryFilters) => (dispatch) => {
     dispatch(backendQueryStarted());
     let url ='http://localhost:3001/search/';
-    let mappedFilters = queryFilters.map((filter) => {
+    let mappedFilters = Object.fromEntries(queryFilters.map((filter) => {
         let fieldName = QUERY_FIELDS_INVERTED[filter.field];
-        return {[fieldName]:filter.value}
-    });
+        return [fieldName, filter.value]
+    }));
     let filters = JSON.stringify(mappedFilters);
     console.log(filters)
     fetch(url, {
