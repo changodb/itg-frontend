@@ -28,7 +28,10 @@ export default ({ queryFilters, onSubmit, onValueChange, onFieldChange, onAddQue
   ));
   return (
     <form>
-            <Button className='submitButton' variant='contained'onClick={() => onSubmit(queryFilters)}>
+            <Button type='submit' className='submitButton' variant='contained'onClick={(event) => {
+                event.preventDefault();
+                onSubmit(queryFilters);
+            }}>
                 Submit
             </Button>
         <List>
