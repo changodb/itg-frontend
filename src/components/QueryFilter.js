@@ -1,16 +1,13 @@
 import React from 'react';
 import { TextField, Select, MenuItem, FormControl } from '@material-ui/core';
-import { QUERY_FIELDS } from '../constants/enums';
 
-const queryFieldMenuItems = Object.entries(QUERY_FIELDS).map( ([key, value]) => (
-    <MenuItem key={key} value={value}>
-      {value}
-    </MenuItem>
-  )
-);
-
-export default ({ idx, field, value, onValueChange, onFieldChange }) => {
-
+export default ({ availableFilterFields, idx, field, value, onValueChange, onFieldChange }) => {
+  const queryFieldMenuItems = Object.entries(availableFilterFields).map( ([key, value]) => (
+        <MenuItem key={key} value={value}>
+          {value}
+        </MenuItem>
+      )
+  );
   return (
     <div className="queryfield">
       <FormControl>

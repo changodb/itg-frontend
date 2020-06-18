@@ -9,7 +9,7 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import Typography from '@material-ui/core/Typography';
 
-export default ({ queryFilters, onSubmit, onValueChange, onFieldChange, onAddQueryFilter, onRemoveQueryFilter }) => {
+export default ({ availableFilterFields, queryFilters, onSubmit, onValueChange, onFieldChange, onAddQueryFilter, onRemoveQueryFilter }) => {
   const filters = queryFilters.map((filter, index) => (
     <ListItem key={index.toString()}  className="queryFilters">
       <AddIcon onClick={() => onAddQueryFilter(index)} />
@@ -20,6 +20,7 @@ export default ({ queryFilters, onSubmit, onValueChange, onFieldChange, onAddQue
         value={filter.value}
         onValueChange={onValueChange}
         onFieldChange={onFieldChange}
+        availableFilterFields={availableFilterFields}
       />
       {(index === 0) ? null :
         <RemoveIcon onClick={() => onRemoveQueryFilter(index)} />
