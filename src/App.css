@@ -68,12 +68,15 @@ body {
 }
 .submitButton {
     /* border: 1px solid red; */
-    color: #5200AC;
+    color: #DBB9FC;
     background-color: inherit;
     position: relative;
     align-self: flex-start;
     margin-top: 25px;
     box-shadow: 0rem .2rem 1rem .1rem #140030;
+}
+.submitButton:hover {
+    background-color: #7c00f4;
 }
 .resultsContainer {
     width: 90vw;
