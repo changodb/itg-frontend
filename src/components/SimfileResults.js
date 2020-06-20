@@ -1,18 +1,6 @@
 import React, { Component } from 'react';
 import MusicNoteIcon from '@material-ui/icons/MusicNote';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableContainer from '@material-ui/core/TableContainer';
-import TableHead from '@material-ui/core/TableHead';
-import TablePagination from '@material-ui/core/TablePagination';
-import TableRow from '@material-ui/core/TableRow';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ExpansionPanel from '@material-ui/core/ExpansionPanel';
-import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
-import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
-import Typography from '@material-ui/core/Typography';
+import { Table, TableBody, TableCell, TableContainer, TableHead, TablePagination, TableRow, List, ListItem, ExpansionPanel, ExpansionPanelSummary, ExpansionPanelDetails, Typography, Box} from '@material-ui/core';
 import _ from 'underscore';
 
 export default ({ simfileResults }) => {
@@ -53,12 +41,10 @@ export default ({ simfileResults }) => {
             setPage(0);
         };
         return (
-
-            <div>
-
+            <Box className='resultsContainer'>
                 <TableContainer>
-                    <Table simfileTable aria-label='simfile table'>
-                        <TableHead>
+                    <Table simfileTable aria-label='simfile table' className='resultsTable'>
+                        <TableHead className='tableHead'>
                             <TableRow>
                                 {columns.map((column) =>
                                     <TableCell
@@ -68,19 +54,17 @@ export default ({ simfileResults }) => {
                                     <Typography variant='h6'>
                                         {column.label}
                                     </Typography>
-
                                     </TableCell>
                                 )}
                             </TableRow>
                         </TableHead>
-                        <TableBody>
+                        <TableBody className='tableBody'>
                             {rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => {
                               return (
                                   <TableRow hover role="checkbox" key={row.songArtist}>
                                     {columns.map((column) => {
                                       var value = _.property(column.id)(row);
                                       var diffs = []
-                                      console.log(row);
                                       for (const [difficulty, val] of Object.entries(row.difficultyMap)) {
                                         diffs.push([difficulty, val])
                                       }
@@ -133,12 +117,12 @@ export default ({ simfileResults }) => {
                 onChangePage={handleChangePage}
                 onChangeRowsPerPage={handleChangeRowsPerPage}
                 />
-            </div>
+            </Box>
         );
     }
     return (
-        <div>
+        <Box>
             <StickyHeadTable />
-        </div>
+        </Box>
     )
 }

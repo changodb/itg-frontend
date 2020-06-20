@@ -1,104 +1,54 @@
 body {
-    background-color: #DBB9FC;
-    color: #5200AC;
-
+    height:100vh;
+    width: 100vw;
+    border: 1px solid red;
 }
 
-.topContainer {
-    align-items: center;
-    margin: auto;
-    padding: auto;
+.bottomContainer {
+    border: 1px solid red;
 }
 .value-input {
-    max-width: 100px !important
+    border: 1px solid red;
 }
 .header {
-    display: flex;
-    justify-content: center;
-    padding: 0
+    border: 1px solid red;
+    width: auto;
 }
 .queryContainer {
-    min-height: 80px;
-    display: inline-flex;
-    align-items: flex-start;
-    flex-flow: column wrap;
-    margin: .5rem;
-
+    border: 1px solid red;
 }
-.queryFilters {
-    display: flex;
-    align-items: center;
-    margin: auto;
-    padding-left: 75px
+/* .queryFilters {
+    border: 1px solid red;
+} */
+/* .queryField {
+    border: 1px solid red;
 }
-.qfield {
-    flex: 1
-}
+.fieldSelect {
+    border: 1px solid red;
+} */
+/* .valueInput {
+    border: 1px solid red;
+} */
 .submitButton {
-    position: relative;
-    align-self: left;
-    background-color: #E4CBFD
+    /* border: 1px solid red; */
+    background-color: inherit;
 }
 .resultsContainer {
-
-}
-.MuiButton-root {
-    color: #280063
-}
-.MuiButton-contained {
-    color: #280063
+    border: 1px solid red;
 }
 .difficultiesPanel {
-    display: flex;
-    background-color: #dbb9fc;
-    box-shadow: none;
-    margin: 0;
-    padding: 0;
-    color: #38007F;
+    border: 1px solid red;
+    background-color: inherit;
 }
 .summaryPanel {
-    min-height: inherit;
-    padding: 0;
+    border: 1px solid red;
+
 }
 .detailsPanel {
-    padding: 0;
+    border: 1px solid red;
+    background-color: inherit;
 }
-.MuiExpansionPanelSummary-root.Mui-expanded {
-    min-height: 32px;
-    padding: 0, 0, 0, 0;
-    margin: 0;
-}
-.MuiExpansionPanelSummary-root {
-    display: flex;
-    align-self: flex-start;
-}
-.MuiTableCell-root {
-    border-bottom: 1px solid #BE80FA;
-    color: #38007F;
-    line-height: 1;
-    padding: 0;
-}
-.MuiTableCell-head {
-    color: #280063;
-    font-weight: bold;
-    padding: 4px
-}
-.MuiTablePagination-root {
-    color: #280063;
-}
-.MuiListItem-gutters {
-    padding-left: 4px;
-    padding-right: 4px;
-}
-.MuiIconButton-root {
-    flex: 0 0 auto;
-    color: rgba(0, 0, 0, 0.54);
-    padding: 3px;
-    overflow: visible;
-    text-align: center;
-    transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-    border-radius: 50%;
-}
+
 @media screen and (max-width: 600px) {
     .MuiTypography-root {
     font-size: .55rem;

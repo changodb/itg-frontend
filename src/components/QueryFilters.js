@@ -28,7 +28,7 @@ export default ({ availableFilterFields, queryFilters, onSubmit, onValueChange, 
     </ListItem>
   ));
   return (
-    <form>
+    <form className='queryContainer'>
             <Button className='submitButton' variant='contained'onClick={() => onSubmit(queryFilters)}>
                 Submit
             </Button>
