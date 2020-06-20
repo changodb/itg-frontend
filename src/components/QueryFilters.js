@@ -8,7 +8,7 @@ import { Button, Grid, List, ListItem, Typography, Box } from '@material-ui/core
 
 export default ({ availableFilterFields, queryFilters, onSubmit, onValueChange, onFieldChange, onAddQueryFilter, onRemoveQueryFilter }) => {
   const filters = queryFilters.map((filter, index) => (
-    <ListItem key={index.toString()} className='query'>
+    <ListItem key={index.toString()} className>
       <AddIcon onClick={() => onAddQueryFilter(index)} />
 
       <QueryFilter
