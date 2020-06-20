@@ -41,30 +41,33 @@ export default ({ simfileResults }) => {
             setPage(0);
         };
         return (
-            <Box className='resultsContainer'>
+
+            <Box>
                 <TableContainer>
-                    <Table simfileTable aria-label='simfile table' className='resultsTable'>
-                        <TableHead className='tableHead'>
+                    <Table simfileTable aria-label='simfile table'>
+                        <TableHead>
                             <TableRow>
                                 {columns.map((column) =>
                                     <TableCell
                                         key={column.id.toString()}
                                         align="flex-start"
                                     >
-                                    <Typography variant='h6'>
+                                    <Typography variant='h5'>
                                         {column.label}
                                     </Typography>
+
                                     </TableCell>
                                 )}
                             </TableRow>
                         </TableHead>
-                        <TableBody className='tableBody'>
+                        <TableBody>
                             {rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => {
                               return (
                                   <TableRow hover role="checkbox" key={row.songArtist}>
                                     {columns.map((column) => {
                                       var value = _.property(column.id)(row);
                                       var diffs = []
+                                      console.log(row);
                                       for (const [difficulty, val] of Object.entries(row.difficultyMap)) {
                                         diffs.push([difficulty, val])
                                       }
