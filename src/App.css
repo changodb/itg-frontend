@@ -1,13 +1,18 @@
 body {
+    height: 100%;
     color: #5200AC;
     /* border: 1px solid red; */
-
 }
 /* Custon Classes */
+.header {
+    height: 164px;
+    width: 474px;
+}
 .bottomContainer {
     height: 100vh;
     padding-left: 5rem;
     padding-right: 5rem;
+    overflow-y: scroll;
     /* border: 1px solid red; */
     background: linear-gradient(0deg, #7c00f4 0%, #280063 100%);
 }
@@ -103,14 +108,28 @@ body {
 .MuiExpansionPanelSummary-expandIcon {
     padding: 1px;
     align-self: flex-start;
+    color: #DBB9FC
+
 }
 .MuiTypography-body1 {
     font-size: 1.3rem;
     font-weight: 400;
     line-height: 1.2;
+    color: #DBB9FC;
 }
 .MuiTypography-h6 {
     font-weight: bold;
+    color: #DBB9FC;
+}
+.MuiTableCell-root {
+    color: #DBB9FC;
+    padding: 4px;
+}
+.MuiTablePagination-root {
+    color: #140030;
+}
+.MuiInputBase-root {
+    color: #DBB9FC
 }
 @media screen and (max-width: 600px) {
     body {
@@ -136,6 +155,10 @@ body {
         padding-top: 100px;
         /* border: 1px solid red; */
         background: linear-gradient(0deg, #7c00f4 0%, #280063 100%);
+    }
+    .header {
+        height: auto;
+        width: auto;
     }
     .topContainer {
         /* border: 1px solid red; */
