@@ -1,6 +1,7 @@
 body {
     height: 100%;
     color: #5200AC;
+    background: linear-gradient(0deg, #7c00f4 0%, #280063 80%);
     /* border: 1px solid red; */
 }
 /* Custon Classes */
@@ -14,12 +15,13 @@ body {
     padding-right: 5rem;
     overflow-y: scroll;
     /* border: 1px solid red; */
-    background: linear-gradient(0deg, #7c00f4 0%, #280063 100%);
+
 }
 .value-input {
     /* border: 1px solid red; */
 }
 .filler {
+    display: inline;
     width: 24%
 }
 .topContainer {
@@ -27,12 +29,12 @@ body {
     display: flex;
     flex-flow: row;
     width: auto;
-    background-color: #280063;
     height: 20%;
     max-height: 164px;
-    justify-content: space-between;
+    justify-content: ;
     padding-left: 5rem;
     padding-right: 5rem;
+    z-index: 5
 }
 .queryContainer {
     /* border: 5px solid purple; */
@@ -40,6 +42,7 @@ body {
     width: 33rem;
     height: 20%;
     justify-content: space-evenly;
+
 }
 .queryFilters {
     padding-left: 25px;
@@ -80,6 +83,7 @@ body {
 }
 .resultsContainer {
     width: 90vw;
+
     /* border: 1px solid red; */
 }
 .difficultiesPanel {
@@ -89,7 +93,7 @@ body {
     box-shadow: none;
     margin: 0;
     padding: 0;
-    justify-content: space-between;
+    justify-content: flex-start;
 }
 
 .summaryPanel {
@@ -109,15 +113,26 @@ body {
     padding: 2px;
 }
 .MuiExpansionPanelSummary-expandIcon {
-    padding: 1px;
-    align-self: flex-start;
+    padding-left: 1rem;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-right: 1px;
     color: #DBB9FC
 
 }
 .MuiTypography-body1 {
-    font-size: 1.3rem;
+    font-size: medium;
     font-weight: 400;
-    line-height: 1.2;
+    line-height: 1;
+    color: #DBB9FC;
+}
+.MuiTypography-body2 {
+    font-size: medium;
+    font-weight: 400;
+    line-height: 1.1;
+    color: #DBB9FC;
+}
+.MuiSvgIcon-root {
     color: #DBB9FC;
 }
 .MuiTypography-h6 {
@@ -128,9 +143,6 @@ body {
     color: #DBB9FC;
     padding: 4px;
 }
-.MuiTablePagination-root {
-    color: #140030;
-}
 .MuiInputBase-root {
     color: #DBB9FC
 }
@@ -138,42 +150,44 @@ body {
     body {
         height:100%;
         width: 100%;
-        color: #5200AC;
+        font-size: small
         /* border: 1px solid red; */
 
     }
     .MuiTypography-body1 {
-    font-size: .75rem;
+    font-size: small;
     font-weight: 300;
     line-height: 1;
     }
     .MuiTypography-h5 {
-    font-size: .9rem;
+    font-size: small;
     }
     /* Custon Classes */
     .bottomContainer {
+        display: flex;
+        flex-flow: column;
+        width: auto;
         height: 100vh;
-        padding-left: 0;
-        padding-right: 0;
-        padding-top: 100px;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-top:3.2rem;
         /* border: 1px solid red; */
-        background: linear-gradient(0deg, #7c00f4 0%, #280063 100%);
     }
     .header {
-        height: auto;
-        width: auto;
+        height: 100%;
+        width: 100%;
     }
     .topContainer {
         /* border: 1px solid red; */
         display: flex;
         flex-flow: row wrap;
         width: auto;
-        background-color: #280063;
         height: 20%;
         max-height: 164px;
         justify-content: space-between;
-        padding-left: 0;
-        padding-right: 0;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-bottom: 10px
     }
     .queryContainer {
         /* border: 5px solid purple; */
@@ -182,6 +196,7 @@ body {
         width: 100%;
         height: 20%;
         justify-content: space-evenly;
+        padding-bottom: 10px
     }
     .queryFilters {
         padding-left: 10px;
@@ -247,11 +262,14 @@ body {
     .MuiExpansionPanelSummary-root.Mui-expanded {
         min-height: inherit;
     }
+    .MuiTableContainer-root {
+
+    }
 }
 
 @media screen and (min-width: 601px) and (max-width: 960px) {
     .MuiTypography-root-body1 {
-    font-size: 1rem;
+    font-size: small;
     font-weight: 400;
     line-height: 1;
     }
@@ -262,21 +280,21 @@ body {
 
     }
     .MuiTypography-body1 {
-    font-size: 1rem;
+    font-size: medium;
     font-weight: 300;
     line-height: 1;
     }
     .MuiTypography-h5 {
-    font-size: 1.1rem;
+    font-size: medium;
+    font-weight: bold;
     }
     /* Custon Classes */
     .bottomContainer {
         height: 100vh;
-        padding-left: 0;
-        padding-right: 0;
-        padding-top: 100px;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 10px;
         /* border: 1px solid red; */
-        background: linear-gradient(0deg, #7c00f4 0%, #280063 100%);
     }
 
     .topContainer {
@@ -294,7 +312,7 @@ body {
         /* border: 5px solid purple; */
         display: flex;
         flex-flow: row;
-        width: auto;
+        width: 600px;
         height: 20%;
         justify-content: space-evenly;
     }
@@ -306,7 +324,6 @@ body {
         width: inherit;
         height: 82px;
         overflow-y: auto;
-
     }
     .submitButton {
         /* border: 1px solid red; */
@@ -342,10 +359,49 @@ body {
     }
 }
 
-@media screen and (min-width: 961) and (max-width: 1280){
+@media screen and (min-width: 961px) and (max-width: 1280px){
     .MuiTypography-root-body1 {
     font-size: 1.2rem;
     font-weight: 400;
     line-height: 1.2;
+    }
+    .topContainer {
+        /* border: 1px solid red; */
+        display: flex;
+        flex-flow: row wrap;
+        width: auto;
+        height: 20%;
+        max-height: 164px;
+        justify-content: flex-start;
+        padding-left: 0;
+        padding-right: 0;
+        padding-bottom: 10px
+    }
+
+    .bottomContainer {
+        justify-content: center;
+        width: auto;
+        height: 100vh;
+        padding-left: auto;
+        padding-right: auto;
+        margin-top: 100px;
+        /* border: 1px solid red; */
+    }
+    .filler {
+        display: none;
+    }
+    .resultsContainer {
+        width: auto;
+        align-self: center;
+        /* border: 1px solid red; */
+    }
+    .submitButton {
+        /* border: 1px solid red; */
+        color: #DBB9FC;
+        background-color: inherit;
+        position: relative;
+        align-self: flex-start;
+        margin-top: 25px;
+        box-shadow: 0rem .2rem 1rem .1rem #140030;
     }
 }
