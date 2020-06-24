@@ -150,18 +150,23 @@ body {
     body {
         height:100%;
         width: 100%;
-        font-size: small
+        font-size: x-small
         /* border: 1px solid red; */
 
     }
     .MuiTypography-body1 {
-    font-size: small;
+    font-size: x-small;
     font-weight: 300;
     line-height: 1;
     }
     .MuiTypography-h5 {
-    font-size: small;
+    font-size: x-small;
+    font-weight: bold;
     }
+    .MuiExpansionPanelSummary-expandIcon {
+        padding-left: .4rem;
+    }
+
     /* Custon Classes */
     .bottomContainer {
         display: flex;
@@ -171,6 +176,7 @@ body {
         padding-left: 0px;
         padding-right: 0px;
         padding-top:3.2rem;
+        margin-top: 3.2rem;
         /* border: 1px solid red; */
     }
     .header {
