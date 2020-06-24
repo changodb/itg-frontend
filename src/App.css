@@ -166,7 +166,9 @@ body {
     .MuiExpansionPanelSummary-expandIcon {
         padding-left: .4rem;
     }
-
+    .MuiTablePagination-actions {
+        margin: 0px;
+    }
     /* Custon Classes */
     .bottomContainer {
         display: flex;
@@ -209,7 +211,7 @@ body {
         display: flex;
         /* border: 1px solid yellow; */
         justify-content: flex-start;
-        width: inherit;
+        width: auto;
         height: 82px;
         overflow-y: auto;
 
@@ -259,7 +261,7 @@ body {
 
     }
     .MuiToolbar-gutters {
-        padding: 5px;
+        padding: 1px;
     }
     .MuiTableCell-root {
         padding: 4px;
@@ -268,8 +270,8 @@ body {
     .MuiExpansionPanelSummary-root.Mui-expanded {
         min-height: inherit;
     }
-    .MuiTableContainer-root {
-
+    .MuiTablePagination-selectRoot {
+        margin-right: 0px;
     }
 }
 
