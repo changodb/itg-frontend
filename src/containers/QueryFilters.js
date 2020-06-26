@@ -9,7 +9,8 @@ import {
 } from '../actions';
 
 const mapStateToProps = (state) => ({
-  queryFilters: state.queryFilters
+  queryFilters: state.queryFilters,
+  availableFilterFields: state.availableFilterFields
 });
 
 const mapDispatchToProps = (dispatch) => ({

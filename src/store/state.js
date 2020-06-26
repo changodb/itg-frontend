@@ -1,41 +1,274 @@
-// export default {
-//     simfileResults: [
-// 	    {
-// 		   "song_name":"My cool song",
-// 		   "song_artist":"DJ SNAZZ",
-// 		   "bpm":69,
-// 		   "pack_name":"Foobar",
-// 		   "difficulty":{
-// 		      "easy":3,
-//               "medium": 5,
-//               "hard": 9
-// 		   },
-// 		   "expanded":false
-// 		},
-// 		{
-// 		   "song_name":"Freaknik is Bacc",
-// 		   "song_artist":"T-Pain",
-// 		   "bpm":420,
-// 		   "pack_name":"Rackem",
-// 		   "difficulty":{
-//               "gucci": 8,
-//               "oni":13,
-// 		   },
-// 		   "expanded":false
-// 		},
-// 		{
-// 		   "song_name":"Thizzle DanCE",
-// 		   "song_artist":"Mac Dre",
-// 		   "bpm":111,
-// 		   "pack_name":"Hoozawutzit",
-// 		   "difficulty":{
-// 		      "beginner":1,
-// 		      "light":3,
-// 		      "standard":5,
-// 		      "heavy":8,
-// 		      "challenge":11,
-// 		   },
-// 		   "expanded":false
-// 		}
-//     ]
-// };
+export default {
+    simfileResults: [
+	    {
+		   "name":"My cool song",
+		   "artist":"DJ SNAZZ",
+		   "bpm":69,
+		   "pack" : {
+               "name":"Foobar"
+           },
+		   "difficultyMap":{
+		      "easy":3,
+              "medium": 5,
+              "hard": 9
+		   },
+           "difficulites": [
+               3, 5 , 9
+           ]
+		},
+		{
+		   "name":"Freaknik is Bacc",
+		   "artist":"T-Pain",
+		   "bpm":420,
+           "pack" : {
+               "name":"Rackem"
+           },
+		   "difficultyMap":{
+              "gucci": 8,
+              "oni":13,
+		   },
+		   "difficulties": [8, 13]
+		},
+		{
+		   "name":"Thizzle DanCE",
+		   "artist":"Mac Dre",
+		   "bpm":111,
+           "pack" : {
+               "name":"Hoozawatzit"
+           },
+		   "difficultyMap":{
+		      "beginner":1,
+		      "light":3,
+		      "standard":5,
+		      "heavy":8,
+		      "challenge":11,
+		   },
+		   "difficulites":[1, 3, 5, 8, 11]
+       },
+       {
+          "name":"My cool song",
+          "artist":"DJ SNAZZ",
+          "bpm":69,
+          "pack" : {
+              "name":"Foobar"
+          },
+          "difficultyMap":{
+             "easy":3,
+             "medium": 5,
+             "hard": 9
+          },
+          "difficulites": [
+              3, 5 , 9
+          ]
+       },
+       {
+          "name":"Freaknik is Bacc",
+          "artist":"T-Pain",
+          "bpm":420,
+          "pack" : {
+              "name":"Rackem"
+          },
+          "difficultyMap":{
+             "gucci": 8,
+             "oni":13,
+          },
+          "difficulties": [8, 13]
+       },
+       {
+          "name":"Thizzle DanCE",
+          "artist":"Mac Dre",
+          "bpm":111,
+          "pack" : {
+              "name":"Hoozawatzit"
+          },
+          "difficultyMap":{
+             "beginner":1,
+             "light":3,
+             "standard":5,
+             "heavy":8,
+             "challenge":11,
+          },
+          "difficulites":[1, 3, 5, 8, 11]
+      },
+      {
+         "name":"My cool song",
+         "artist":"DJ SNAZZ",
+         "bpm":69,
+         "pack" : {
+             "name":"Foobar"
+         },
+         "difficultyMap":{
+            "easy":3,
+            "medium": 5,
+            "hard": 9
+         },
+         "difficulites": [
+             3, 5 , 9
+         ]
+      },
+      {
+         "name":"Freaknik is Bacc",
+         "artist":"T-Pain",
+         "bpm":420,
+         "pack" : {
+             "name":"Rackem"
+         },
+         "difficultyMap":{
+            "gucci": 8,
+            "oni":13,
+         },
+         "difficulties": [8, 13]
+      },
+      {
+         "name":"Thizzle DanCE",
+         "artist":"Mac Dre",
+         "bpm":111,
+         "pack" : {
+             "name":"Hoozawatzit"
+         },
+         "difficultyMap":{
+            "beginner":1,
+            "light":3,
+            "standard":5,
+            "heavy":8,
+            "challenge":11,
+         },
+         "difficulites":[1, 3, 5, 8, 11]
+     },
+     {
+        "name":"My cool song",
+        "artist":"DJ SNAZZ",
+        "bpm":69,
+        "pack" : {
+            "name":"Foobar"
+        },
+        "difficultyMap":{
+           "easy":3,
+           "medium": 5,
+           "hard": 9
+        },
+        "difficulites": [
+            3, 5 , 9
+        ]
+     },
+     {
+        "name":"Freaknik is Bacc",
+        "artist":"T-Pain",
+        "bpm":420,
+        "pack" : {
+            "name":"Rackem"
+        },
+        "difficultyMap":{
+           "gucci": 8,
+           "oni":13,
+        },
+        "difficulties": [8, 13]
+     },
+     {
+        "name":"Thizzle DanCE",
+        "artist":"Mac Dre",
+        "bpm":111,
+        "pack" : {
+            "name":"Hoozawatzit"
+        },
+        "difficultyMap":{
+           "beginner":1,
+           "light":3,
+           "standard":5,
+           "heavy":8,
+           "challenge":11,
+        },
+        "difficulites":[1, 3, 5, 8, 11]
+    },
+    {
+       "name":"My cool song",
+       "artist":"DJ SNAZZ",
+       "bpm":69,
+       "pack" : {
+           "name":"Foobar"
+       },
+       "difficultyMap":{
+          "easy":3,
+          "medium": 5,
+          "hard": 9
+       },
+       "difficulites": [
+           3, 5 , 9
+       ]
+    },
+    {
+       "name":"Freaknik is Bacc",
+       "artist":"T-Pain",
+       "bpm":420,
+       "pack" : {
+           "name":"Rackem"
+       },
+       "difficultyMap":{
+          "gucci": 8,
+          "oni":13,
+       },
+       "difficulties": [8, 13]
+    },
+    {
+       "name":"Thizzle DanCE",
+       "artist":"Mac Dre",
+       "bpm":111,
+       "pack" : {
+           "name":"Hoozawatzit"
+       },
+       "difficultyMap":{
+          "beginner":1,
+          "light":3,
+          "standard":5,
+          "heavy":8,
+          "challenge":11,
+       },
+       "difficulites":[1, 3, 5, 8, 11]
+   },
+   {
+      "name":"My cool song",
+      "artist":"DJ SNAZZ",
+      "bpm":69,
+      "pack" : {
+          "name":"Foobar"
+      },
+      "difficultyMap":{
+         "easy":3,
+         "medium": 5,
+         "hard": 9
+      },
+      "difficulites": [
+          3, 5 , 9
+      ]
+   },
+   {
+      "name":"Freaknik is Bacc",
+      "artist":"T-Pain",
+      "bpm":420,
+      "pack" : {
+          "name":"Rackem"
+      },
+      "difficultyMap":{
+         "gucci": 8,
+         "oni":13,
+      },
+      "difficulties": [8, 13]
+   },
+   {
+      "name":"Thizzle DanCE",
+      "artist":"Mac Dre",
+      "bpm":111,
+      "pack" : {
+          "name":"Hoozawatzit"
+      },
+      "difficultyMap":{
+         "beginner":1,
+         "light":3,
+         "standard":5,
+         "heavy":8,
+         "challenge":11,
+      },
+      "difficulites":[1, 3, 5, 8, 11]
+   }
+    ]
+};
