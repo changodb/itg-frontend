@@ -1,5 +1,6 @@
 import { createAction } from '@reduxjs/toolkit';
 import { QUERY_FIELDS_INVERTED } from '../constants/enums';
+import { API_URL } from '../constants';
 
 export const queryFilterValueChange = createAction('query/filter/valueChange');
 
@@ -17,13 +18,14 @@ export const backendQueryError = createAction('backend/query/error');
 
 export const submitQuery = (queryFilters) => (dispatch) => {
     dispatch(backendQueryStarted());
-    let url ='search/';
+    let url = API_URL + 'search/';
     let mappedFilters = Object.fromEntries(queryFilters.map((filter) => {
         let fieldName = QUERY_FIELDS_INVERTED[filter.field];
         return [fieldName, filter.value]
     }));
     let filters = JSON.stringify(mappedFilters);
-    console.log(filters)
+    console.log(filters);
+    console.log(API_URL);
     fetch(url, {
         method: 'POST',
         mode: 'cors',
