@@ -13,7 +13,7 @@ body {
     height: 100vh;
     padding-left: 5rem;
     padding-right: 5rem;
-    overflow-y: scroll;
+    overflow-y: auto;
     /* border: 1px solid red; */
 
 }
@@ -307,7 +307,6 @@ body {
         display: flex;
         flex-flow: row wrap;
         width: auto;
-        background-color: #280063;
         height: inherit;
         max-height: 15%;
         justify-content: center;
