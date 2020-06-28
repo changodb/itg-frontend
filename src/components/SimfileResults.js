@@ -75,7 +75,7 @@ export default ({ simfileResults }) => {
                                           ([difficulty, val]) => (
                                               <ListItem >
                                                 <Typography>
-                                                  {difficulty.toProperCase()} : {val}
+                                                  {difficulty.toProperCase()}: {val}
                                                 </Typography>
                                               </ListItem>
                                           )
