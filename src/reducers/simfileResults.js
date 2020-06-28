@@ -5,7 +5,7 @@ import state from '../store/state';
 
 // Dummy reducer; does nothing.
 export default createReducer(
-    state.simfileResults, {
+    [], {
         [backendQueryDelivered]: (state, action) => {
             return action.payload;
         }
