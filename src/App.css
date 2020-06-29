@@ -9,6 +9,9 @@ body {
     height: 164px;
     width: 474px;
 }
+.hidden {
+  display: none;
+}
 .bottomContainer {
     height: 100vh;
     padding-left: 5rem;
@@ -118,7 +121,12 @@ body {
     padding-bottom: 1px;
     padding-right: 1px;
     color: #DBB9FC
-
+}
+.MuiTableSortLabel-root.MuiTableSortLabel-active {
+  color: #7c00f4;
+}
+.MuiTableSortLabel-root.MuiTableSortLabel-active.MuiTableSortLabel-root.MuiTableSortLabel-active .MuiTableSortLabel-icon {
+  color: #7c00f4;
 }
 .MuiTypography-body1 {
     font-size: medium;
