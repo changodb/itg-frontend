@@ -15,9 +15,6 @@ export default ({ simfileResults }) => {
       {id: 'difficultyMap', label: 'Difficulties'},
   ];
 
-  String.prototype.toProperCase = function () {
-  return this.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
-  };
   var rows = []
   for (let [key, value] of Object.entries(simfileResults)) {
 
@@ -146,7 +143,7 @@ export default ({ simfileResults }) => {
                                       var difflist = sortedDiffs.map(
                                           ([difficulty, val]) => (
                                               <ListItem >
-                                                  {difficulty.toProperCase()}: {val}
+                                                  {difficulty}: {val}
                                               </ListItem>
                                           )
                                       )
