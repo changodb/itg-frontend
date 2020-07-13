@@ -9,6 +9,9 @@ body {
     height: 164px;
     width: 474px;
 }
+.hidden {
+  display: none;
+}
 .bottomContainer {
     height: 100vh;
     padding-left: 5rem;
@@ -111,6 +114,7 @@ body {
 /* Mui Classes */
 .MuiListItem-gutters {
     padding: 2px;
+    text-transform: capitalize;
 }
 .MuiExpansionPanelSummary-expandIcon {
     padding-left: 1rem;
@@ -118,13 +122,21 @@ body {
     padding-bottom: 1px;
     padding-right: 1px;
     color: #DBB9FC
-
+}
+.MuiTableSortLabel-root.MuiTableSortLabel-active {
+  color: #7c00f4;
+}
+.MuiTableSortLabel-root.MuiTableSortLabel-active.MuiTableSortLabel-root.MuiTableSortLabel-active .MuiTableSortLabel-icon {
+  color: #7c00f4;
 }
 .MuiTypography-body1 {
     font-size: medium;
     font-weight: 400;
-    line-height: 1;
+    line-height: 1.12;
     color: #DBB9FC;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
 }
 .MuiTypography-body2 {
     font-size: medium;
@@ -142,6 +154,13 @@ body {
 .MuiTableCell-root {
     color: #DBB9FC;
     padding: 4px;
+    min-width: 75px;
+    max-width: 100px;
+}
+.MuiTableCell-head {
+    font-size: medium;
+    font-weight: 500;
+    line-height: 1.5rem;
 }
 .MuiInputBase-root {
     color: #DBB9FC
@@ -248,8 +267,8 @@ body {
         background-color: inherit;
         box-shadow: none;
         margin: 0;
-        padding: 0;
         justify-content: space-between;
+
     }
     .detailsPanel {
         /* border: 1px solid red; */
@@ -267,6 +286,7 @@ body {
     }
     .MuiExpansionPanelSummary-root.Mui-expanded {
         min-height: inherit;
+
     }
     .MuiTablePagination-selectRoot {
         margin-right: 0px;
@@ -286,7 +306,7 @@ body {
 
     }
     .MuiTypography-body1 {
-    font-size: medium;
+    font-size: small;
     font-weight: 300;
     line-height: 1;
     }
