@@ -156,7 +156,11 @@ body {
     padding: 4px;
     min-width: 75px;
     max-width: 100px;
-
+}
+.MuiTableCell-head {
+    font-size: medium;
+    font-weight: 500;
+    line-height: 1.5rem;
 }
 .MuiInputBase-root {
     color: #DBB9FC
