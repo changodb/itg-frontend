@@ -1,6 +1,6 @@
 export default {
     simfileResults: [
-      {
+	    {
 		   "name":"Up",
 		   "artist":"Fit",
 		   "bpm": 'Your',
@@ -8,11 +8,11 @@ export default {
                "name":"Style"
            },
 		   "difficultyMap":{
-		      "easy":'3 - Know',
-          "medium": '6 - Your',
-          "hard": '9 - Difficulty'
+		      "easy":'Know',
+              "medium": 'Your',
+              "hard": 'Difficulty'
 		   },
            "difficulites": []
-      }
+		},
     ]
-  }
+};
