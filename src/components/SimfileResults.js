@@ -20,11 +20,8 @@ export default ({ simfileResults }) => {
   };
   var rows = []
   for (let [key, value] of Object.entries(simfileResults)) {
-          console.log(`${key}: ${value}`);
+
           rows.push(value)
-          for (let [inner_key, inner_value] of Object.entries(simfileResults[key])) {
-              console.log(`${inner_key}: ${inner_value}`);
-          }
   }
 //
   function descendingComparator(a, b, orderBy) {
@@ -97,7 +94,6 @@ export default ({ simfileResults }) => {
 
   EnhancedTableHead.propTypes = {
     onRequestSort: PropTypes.func.isRequired,
-    onSelectAllClick: PropTypes.func.isRequired,
     order: PropTypes.oneOf(['asc', 'desc']).isRequired,
     orderBy: PropTypes.string.isRequired,
   };
@@ -125,7 +121,7 @@ export default ({ simfileResults }) => {
 
             <Box>
                 <TableContainer>
-                    <Table simfileTable aria-label='simfile table'>
+                    <Table aria-label='simfile table'>
                         <EnhancedTableHead
                           order={order}
                           orderBy={orderBy}
@@ -140,16 +136,15 @@ export default ({ simfileResults }) => {
                                     {columns.map((column) => {
                                       var value = _.property(column.id)(row);
                                       var diffs = []
-                                      console.log(row);
                                       for (const [difficulty, val] of Object.entries(row.difficultyMap)) {
                                         diffs.push([difficulty, val])
                                       }
-                                      var difflist = diffs.map(
+                                      let sortedDiffs = _.sortBy(diffs, '1')
+                                      console.log(sortedDiffs)
+                                      var difflist = sortedDiffs.map(
                                           ([difficulty, val]) => (
                                               <ListItem >
-                                                <Typography>
                                                   {difficulty.toProperCase()}: {val}
-                                                </Typography>
                                               </ListItem>
                                           )
                                       )
@@ -157,7 +152,6 @@ export default ({ simfileResults }) => {
                                         <TableCell
                                             key={column.id}
                                             size='small'
-                                            align='flex-start'
                                             >
                                           {column.id ==='difficultyMap' ?
                                           <ExpansionPanel className='difficultiesPanel'>
