@@ -1,48 +1,18 @@
 export default {
     simfileResults: [
       {
-		   "name":"My cool song",
-		   "artist":"DJ SNAZZ",
-		   "bpm":69,
+		   "name":"Up",
+		   "artist":"Fit",
+		   "bpm": 'Your',
 		   "pack" : {
-               "name":"Foobar"
+               "name":"Style"
            },
 		   "difficultyMap":{
-		      "easy":3,
-              "medium": 5,
-              "hard": 9
+		      "easy":'3 - Know',
+          "medium": '6 - Your',
+          "hard": '9 - Difficulty'
 		   },
-           "difficulites": [
-               3, 5 , 9
-           ]
-		},
-		{
-		   "name":"Freaknik is Bacc",
-		   "artist":"T-Pain",
-		   "bpm":420,
-           "pack" : {
-               "name":"Rackem"
-           },
-		   "difficultyMap":{
-              "gucci": 8,
-              "oni":13,
-		   },
-		   "difficulties": [8, 13]
-		},
-		{
-		   "name":"Thizzle DanCE",
-		   "artist":"Mac Dre",
-		   "bpm":111,
-           "pack" : {
-               "name":"Hoozawatzit"
-           },
-		   "difficultyMap":{
-		      "beginner":1,
-		      "light":3,
-		      "standard":5,
-		      "heavy":8,
-		      "challenge":11,
-		   },
-    }
+           "difficulites": []
+      }
     ]
-};
+  }
