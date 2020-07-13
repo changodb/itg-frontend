@@ -114,6 +114,7 @@ body {
 /* Mui Classes */
 .MuiListItem-gutters {
     padding: 2px;
+    text-transform: capitalize;
 }
 .MuiExpansionPanelSummary-expandIcon {
     padding-left: 1rem;
@@ -131,9 +132,11 @@ body {
 .MuiTypography-body1 {
     font-size: medium;
     font-weight: 400;
-    line-height: 1;
+    line-height: 1.12;
     color: #DBB9FC;
-    text-transform: capitalize;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
 }
 .MuiTypography-body2 {
     font-size: medium;
@@ -151,6 +154,9 @@ body {
 .MuiTableCell-root {
     color: #DBB9FC;
     padding: 4px;
+    min-width: 75px;
+    max-width: 100px;
+
 }
 .MuiInputBase-root {
     color: #DBB9FC
@@ -257,8 +263,8 @@ body {
         background-color: inherit;
         box-shadow: none;
         margin: 0;
-        padding: 0;
         justify-content: space-between;
+
     }
     .detailsPanel {
         /* border: 1px solid red; */
@@ -276,6 +282,7 @@ body {
     }
     .MuiExpansionPanelSummary-root.Mui-expanded {
         min-height: inherit;
+
     }
     .MuiTablePagination-selectRoot {
         margin-right: 0px;
@@ -295,7 +302,7 @@ body {
 
     }
     .MuiTypography-body1 {
-    font-size: medium;
+    font-size: small;
     font-weight: 300;
     line-height: 1;
     }
