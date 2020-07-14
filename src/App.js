@@ -13,14 +13,14 @@ function App() {
   return (
         <StylesProvider injectFirst>
           	<Provider store={store}>
-            <Box className ='topContainer'>
-                <Header />
-                <Box className='filler' />
-                <QueryFilters />
-            </Box >
-                <Box className='bottomContainer'>
+              <Box className ='topContainer'>
+                  <Header />
+                  <Box className='filler' />
+                  <QueryFilters />
+              </Box >
+              <Box className='bottomContainer'>
             		<SimfileResults />
-                </Box>
+              </Box>
         	</Provider>
         </StylesProvider>
   );
