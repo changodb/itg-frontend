@@ -17,6 +17,7 @@ body {
     padding-left: 5rem;
     padding-right: 5rem;
     overflow-y: auto;
+
     /* border: 1px solid red; */
 
 }
@@ -34,7 +35,6 @@ body {
     width: auto;
     height: auto;
     max-height: 15%;
-    justify-content: ;
     padding-left: 5rem;
     padding-right: 5rem;
     padding-bottom: 1rem;
@@ -55,7 +55,10 @@ body {
     width: inherit;
     height: 164px;
     overflow-y: auto;
-
+}
+.loadingWheel{
+ display: flex;
+ justify-content: center;
 }
 .query {
     /* border: 1px solid red; */

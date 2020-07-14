@@ -6,16 +6,12 @@ export default createReducer(
     {
       [backendQueryStarted]: (state, action) => {
           return true;
-      }
-    },
-    {
+      },
       [backendQueryDelivered]: (state, action) => {
           return false;
-      }
-    },
-    {
+      },
       [backendQueryError]: (state, action) => {
           return false;
       }
-    },
+    }
 );

@@ -3,10 +3,17 @@ import MusicNoteIcon from '@material-ui/icons/MusicNote';
 import PropTypes from 'prop-types';
 import { Table, TableBody, TableCell, TableContainer, TableHead, TablePagination, TableRow, TableSortLabel, List, ListItem, ExpansionPanel, ExpansionPanelSummary, ExpansionPanelDetails, Typography, Box} from '@material-ui/core';
 import _ from 'underscore';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
-export default ({ simfileResults }) => {
+export default ({ simfileResults, isLoading }) => {
 
-
+  function LoadingWheel () {
+    return (
+      <div className='loadingWheel'>
+        <CircularProgress />
+      </div>
+    )
+  }
   const columns = [
       {id: 'artist', label: 'Artist Name'},
       {id: 'name', label: 'Track Name'},
@@ -20,7 +27,7 @@ export default ({ simfileResults }) => {
 
           rows.push(value)
   }
-//
+
   function descendingComparator(a, b, orderBy) {
     if (b[orderBy] < a[orderBy]) {
       return -1;
@@ -191,7 +198,7 @@ export default ({ simfileResults }) => {
     }
     return (
         <Box>
-            <EnhancedTable />
+          {isLoading === false ? <EnhancedTable /> : <LoadingWheel />}
         </Box>
     )
 }
