@@ -1,5 +1,11 @@
 import React from 'react';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 export default ({ loadingWheel }) => {
-  <Spinner animation="border" variant="light" role="status"/>
+  const isLoading = this.state
+  return (
+    <div>
+     {isLoading ? <CircularProgress /> : null}
+    </div>
+  )
 }

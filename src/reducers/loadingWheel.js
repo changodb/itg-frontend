@@ -13,4 +13,9 @@ export default createReducer(
           return false;
       }
     },
+    {
+      [backendQueryError]: (state, action) => {
+          return false;
+      }
+    },
 );
