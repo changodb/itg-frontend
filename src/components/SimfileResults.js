@@ -29,10 +29,13 @@ export default ({ simfileResults, isLoading }) => {
   }
 
   function descendingComparator(a, b, orderBy) {
-    if (b[orderBy] < a[orderBy]) {
+    const valueExtractorFunction = _.property(orderBy);
+    const aValue = valueExtractorFunction(a);
+    const bValue = valueExtractorFunction(b);
+    if (bValue < aValue) {
       return -1;
     }
-    if (b[orderBy] > a[orderBy]) {
+    if (bValue > aValue) {
       return 1;
     }
     return 0;
