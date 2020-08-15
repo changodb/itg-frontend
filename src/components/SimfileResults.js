@@ -14,13 +14,6 @@ export default ({ simfileResults, isLoading }) => {
       </div>
     )
   }
-  const columns = [
-      {id: 'artist', label: 'Artist Name'},
-      {id: 'name', label: 'Track Name'},
-      {id: 'bpm', label: 'BPM'},
-      {id: ['pack', 'name'], label: 'Pack Name'},
-      {id: 'difficultyMap', label: 'Difficulties'},
-  ];
 
   var rows = []
   for (let [key, value] of Object.entries(simfileResults)) {
@@ -139,7 +132,7 @@ export default ({ simfileResults, isLoading }) => {
                             .map((row, index) => {
                               return (
                                   <TableRow hover role="checkbox" key={row.songArtist}>
-                                    {columns.map((column) => {
+                                    {headCells.map((column) => {
                                       var value = _.property(column.id)(row);
                                       var diffs = []
                                       for (const [difficulty, val] of Object.entries(row.difficultyMap)) {
