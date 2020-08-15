@@ -73,7 +73,7 @@ export default ({ simfileResults, isLoading }) => {
               padding={headCell.disablePadding ? 'none' : 'default'}
               sortDirection={orderBy === headCell.id ? order : false}
             >
-            {(headCell.label !== 'Pack Name' && headCell.label !== 'Difficulties') ?
+            {(headCell.label !== 'Difficulties') ?
               <TableSortLabel
                 active={orderBy === headCell.id}
                 direction={orderBy === headCell.id ? order : 'asc'}
