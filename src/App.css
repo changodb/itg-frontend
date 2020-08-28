@@ -21,8 +21,8 @@ body {
     /* border: 1px solid red; */
 
 }
-.value-input {
-    /* border: 1px solid red; */
+.valueInput {
+     background-color: #DBB9FC;
 }
 .filler {
     display: inline;
@@ -167,6 +167,9 @@ body {
 }
 .MuiInputBase-root {
     color: #DBB9FC
+}
+input {
+    background-color: white;
 }
 @media screen and (max-width: 600px) {
     body {
