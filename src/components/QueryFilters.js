@@ -26,17 +26,17 @@ export default ({ availableFilterFields, queryFilters, onSubmit, onValueChange, 
   ));
   return (
     <form className='queryContainer'>
-            <Button type='submit' className='submitButton' variant='contained'onClick={(event) => {
-                event.preventDefault();
-                onSubmit(queryFilters);
-            }}>
-                Submit
-            </Button>
-        <List className="queryFilters">
-            <Typography>
-              {filters}
-            </Typography>
-        </List>
+      <List className="queryFilters">
+          <Typography>
+            {filters}
+          </Typography>
+      </List>
+      <Button type='submit' className='submitButton' variant='contained'onClick={(event) => {
+          event.preventDefault();
+          onSubmit(queryFilters);
+      }}>
+        Submit
+      </Button>
     </form>
   )
 };
