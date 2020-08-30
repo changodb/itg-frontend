@@ -21,8 +21,9 @@ body {
     /* border: 1px solid red; */
 
 }
-.value-input {
-    /* border: 1px solid red; */
+.valueInput {
+     background-color: #DBB9FC;
+     color: red;
 }
 .filler {
     display: inline;
@@ -38,6 +39,7 @@ body {
     padding-left: 5rem;
     padding-right: 5rem;
     padding-bottom: 1rem;
+    padding-top: 2rem;
     z-index: 5;
 }
 .queryContainer {
@@ -69,10 +71,12 @@ body {
 .fieldSelect {
     /* border: 1px solid yellow; */
     width: 133px;
+    color: #DBB9FC;
 }
 .valueInput {
     /* border: 1px solid red; */
     width: auto;
+    padding: 0 3px;
 
 }
 .submitButton {
@@ -81,7 +85,7 @@ body {
     background-color: inherit;
     position: relative;
     align-self: flex-start;
-    margin-top: 25px;
+    margin-top: .2rem;
     box-shadow: 0rem .2rem 1rem .1rem #140030;
 }
 .submitButton:hover {
@@ -165,9 +169,6 @@ body {
     font-weight: 500;
     line-height: 1.5rem;
 }
-.MuiInputBase-root {
-    color: #DBB9FC
-}
 @media screen and (max-width: 600px) {
     body {
         height:100%;
@@ -241,10 +242,6 @@ body {
         }
     .queryField {
         /* border: 1px solid green; */
-    }
-    .fieldSelect {
-        /* border: 1px solid yellow; */
-        width: 110px;
     }
     .valueInput {
         /* border: 1px solid red; */
