@@ -1,13 +1,17 @@
-import React, { Component } from 'react';
+import React, {useEffect} from 'react';
+import {useDispatch} from 'react-redux';
 import MusicNoteIcon from '@material-ui/icons/MusicNote';
 import PropTypes from 'prop-types';
-import {Table, TableBody, TableCell, TableContainer, TableHead, TablePagination, TableRow, TableSortLabel, Typography, Box } from '@material-ui/core';
+import {Button, Table, TableBody, TableCell, TableContainer, TableHead, TablePagination, TableRow, TableSortLabel, Typography, Box } from '@material-ui/core';
 import _ from 'underscore';
 import LoadingWheel from './loadingWheel'
-
+import { packListQuery } from '../actions'
 export default ({ packList, isLoading}) => {
+  const dispatch = useDispatch()
 
+  React.useEffect(() => dispatch(packListQuery()), [])
   var rows = []
+
   for (let [key, value] of Object.entries(packList)) {
           rows.push(value)
   }
@@ -54,7 +58,7 @@ export default ({ packList, isLoading}) => {
     return (
       <TableHead>
         <TableRow>
-          {headCells.map((headCell) => {
+          {headCells.map((headCell) => (
             <TableCell
               key={headCell.id}
               padding={headCell.disablePadding ? 'none' : 'default'}
@@ -73,7 +77,7 @@ export default ({ packList, isLoading}) => {
                 ) : null}
               </TableSortLabel>
             </TableCell>
-          })}
+          ))}
         </TableRow>
       </TableHead>
     );
@@ -86,10 +90,11 @@ export default ({ packList, isLoading}) => {
   };
 
   function PackTable() {
+
     const [order, setOrder] = React.useState('asc');
     const [orderBy, setOrderBy] = React.useState('packName');
     const [page, setPage] = React.useState(0);
-    const [rowsPerPage, setRowsPerPage] = React.useState(10);
+    const [rowsPerPage, setRowsPerPage] = React.useState(25);
 
     const handleRequestSort = (event, property) => {
       const isAsc = orderBy === property && order === 'asc';
@@ -123,7 +128,7 @@ export default ({ packList, isLoading}) => {
                         return (
                           <TableCell
                             key={column.id}
-                            size='small'
+                            size='medium'
                           >
                             <Typography>{value}</Typography>
                           </TableCell>
@@ -132,7 +137,7 @@ export default ({ packList, isLoading}) => {
                     </TableRow>
                   );
                 })
-              };
+              }
             </TableBody>
           </Table>
         </TableContainer>

@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import store from './store'
 import QueryFilters from './containers/QueryFilters';
 import SimfileResults from './containers/SimfileResults';
+import PackList from './containers/PackList'
 import Header from './components/Header';
 import {Divider, Grid, Box, Container} from '@material-ui/core/';
 import { StylesProvider } from '@material-ui/core/styles';
@@ -19,7 +20,7 @@ function App() {
                   <QueryFilters />
               </Box >
               <Box className='bottomContainer'>
-            		<SimfileResults />
+            		<PackList />
               </Box>
         	</Provider>
         </StylesProvider>
