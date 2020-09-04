@@ -1,5 +1,5 @@
 import { createReducer } from '@reduxjs/toolkit';
-import { backendQueryStarted, backendQueryError, backendQueryDelivered } from '../actions';
+import { backendQueryStarted, backendQueryError, backendQueryDelivered, packListQueryStarted, packListQueryDelivered, packListQueryError } from '../actions';
 
 export default createReducer(
   false,
@@ -11,6 +11,15 @@ export default createReducer(
           return false;
       },
       [backendQueryError]: (state, action) => {
+          return false;
+      },
+      [packListQueryStarted]: (state, action) => {
+          return true;
+      },
+      [packListQueryDelivered]: (state, action) => {
+          return false;
+      },
+      [packListQueryError]: (state, action) => {
           return false;
       }
     }
