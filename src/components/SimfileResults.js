@@ -3,17 +3,9 @@ import MusicNoteIcon from '@material-ui/icons/MusicNote';
 import PropTypes from 'prop-types';
 import { Table, TableBody, TableCell, TableContainer, TableHead, TablePagination, TableRow, TableSortLabel, List, ListItem, ExpansionPanel, ExpansionPanelSummary, ExpansionPanelDetails, Typography, Box} from '@material-ui/core';
 import _ from 'underscore';
-import CircularProgress from '@material-ui/core/CircularProgress';
+import LoadingWheel from './loadingWheel'
 
-export default ({ simfileResults, isLoading }) => {
-
-  function LoadingWheel () {
-    return (
-      <div className='loadingWheel'>
-        <CircularProgress />
-      </div>
-    )
-  }
+export default ({ simfileResults, isLoading}) => {
 
   var rows = []
   for (let [key, value] of Object.entries(simfileResults)) {
