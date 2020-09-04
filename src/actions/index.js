@@ -57,7 +57,7 @@ export const packListQueryError = createAction('packList/query/error');
 export const packListQuery = () => (dispatch) => {
   dispatch(packListQueryStarted());
   let url = API_URL + 'list/';
-  let query = {field": "pack.name"}
+  let query = {"field": "pack.name"}
   fetch(url, {
     method: 'POST',
     mode: 'cors',
