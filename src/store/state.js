@@ -14,5 +14,11 @@ export default {
 		   },
            "difficulites": []
       }
+    ],
+    packList: [
+      {
+        "packName":"Pack Name",
+        "count": "Song Count"
+      }
     ]
   }
