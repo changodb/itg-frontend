@@ -6,7 +6,8 @@ import {Button, Table, TableBody, TableCell, TableContainer, TableHead, TablePag
 import _ from 'underscore';
 import LoadingWheel from './loadingWheel'
 import { packListQuery } from '../actions'
-export default ({ packList, isLoading}) => {
+
+export default ({ packList, isLoading, pageToggle}) => {
   const dispatch = useDispatch()
 
   React.useEffect(() => dispatch(packListQuery()), [])
@@ -156,7 +157,7 @@ export default ({ packList, isLoading}) => {
 
   return (
     <Box>
-      {isLoading === false ? <PackTable /> : <LoadingWheel />}
+        {pageToggle === true ? isLoading === false ? <PackTable /> : <LoadingWheel />: null}
     </Box>
   )
 }

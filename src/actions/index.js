@@ -18,6 +18,7 @@ export const backendQueryError = createAction('backend/query/error');
 
 export const submitQuery = (queryFilters) => (dispatch) => {
     dispatch(backendQueryStarted());
+    dispatch(viewChange(false))
     let url = API_URL + 'search/';
     let mappedFilters = Object.fromEntries(queryFilters.map((filter) => {
         let fieldName = QUERY_FIELDS_INVERTED[filter.field];
@@ -77,3 +78,5 @@ export const packListQuery = () => (dispatch) => {
     dispatch(packListQueryError(error));
   });
 }
+
+export const viewChange = createAction('view/change');

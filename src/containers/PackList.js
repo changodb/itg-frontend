@@ -4,7 +4,8 @@ import { packListQuery } from '../actions';
 
 const mapStateToProps = (state) => ({
     packList: state.packList,
-    isLoading: state.isLoading
+    isLoading: state.isLoading,
+    pageToggle: state.pageToggle
 });
 
 const mapDispatchToProps = (dispatch) => ({

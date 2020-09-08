@@ -5,7 +5,7 @@ import { Table, TableBody, TableCell, TableContainer, TableHead, TablePagination
 import _ from 'underscore';
 import LoadingWheel from './loadingWheel'
 
-export default ({ simfileResults, isLoading}) => {
+export default ({ simfileResults, isLoading, pageToggle}) => {
 
   var rows = []
   for (let [key, value] of Object.entries(simfileResults)) {
@@ -186,7 +186,7 @@ export default ({ simfileResults, isLoading}) => {
     }
     return (
         <Box>
-          {isLoading === false ? <EnhancedTable /> : <LoadingWheel />}
+          {pageToggle === false ? isLoading === false ? <EnhancedTable /> : <LoadingWheel />: null}
         </Box>
     )
 }
