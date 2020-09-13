@@ -95,7 +95,7 @@ export default ({ simfileResults, isLoading, pageToggle}) => {
 
     function EnhancedTable() {
       const [order, setOrder] = React.useState('asc');
-      const [orderBy, setOrderBy] = React.useState('artist');
+      const [orderBy, setOrderBy] = React.useState(['pack', 'name']);
       const [page, setPage] = React.useState(0);
       const [rowsPerPage, setRowsPerPage] = React.useState(10);
 
@@ -106,6 +106,11 @@ export default ({ simfileResults, isLoading, pageToggle}) => {
       };
       const handleChangePage = (event, newPage) => {
           setPage(newPage);
+          window.scrollTo({
+            top: 200,
+            left: 0,
+            behavior: 'smooth'
+          });
       };
       const handleChangeRowsPerPage = (event) => {
           setRowsPerPage(+event.target.value);

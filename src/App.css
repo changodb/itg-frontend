@@ -1,7 +1,12 @@
+html {
+    height: 100%;
+}
 body {
     height: 100%;
     color: #5200AC;
     background: linear-gradient(0deg, #7c00f4 0%, #280063 80%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     /* border: 1px solid red; */
 }
 /* Custon Classes */
@@ -13,15 +18,15 @@ body {
   display: none;
 }
 .bottomContainer {
-    height: 100vh;
     padding-left: 5rem;
     padding-right: 5rem;
-    overflow-y: auto;
+    overflow-y: visible;
     /* border: 1px solid red; */
 
 }
 .valueInput {
      background-color: #DBB9FC;
+     border-radius: 9px
 }
 .filler {
     display: inline;
@@ -84,7 +89,19 @@ body {
     position: relative;
     align-self: flex-start;
     margin-top: .2rem;
-    box-shadow: 0rem .2rem 1rem .1rem #140030;
+    box-shadow: 0rem .2em .8em .1em #140030;
+    min-width: 90px;
+}
+.packToggle {
+    /* border: 1px solid red; */
+    color: #DBB9FC;
+    background-color: inherit;
+    position: relative;
+    align-self: flex-start;
+    margin-top: .2rem;
+    margin-bottom: .5rem;
+    box-shadow: 0rem .2em .8em .1em #140030;
+    min-width: 90px;
 }
 .submitButton:hover {
     background-color: #7c00f4;
@@ -178,7 +195,7 @@ body {
     .MuiTypography-body1 {
     font-size: x-small;
     font-weight: 300;
-    line-height: 1;
+    line-height: 1.1;
     }
     .MuiTypography-h5 {
     font-size: x-small;
@@ -246,15 +263,7 @@ body {
         width: 175px;
 
     }
-    .submitButton {
-        /* border: 1px solid red; */
-        background-color: inherit;
-        position: relative;
-        align-self: center;
-        margin-top: 0px;
-        margin-left: 10px;
-        margin-bottom: 10px;
-    }
+
     .resultsContainer {
         width: auto;
         /* border: 1px solid red; */
@@ -347,15 +356,7 @@ body {
         height: 82px;
         overflow-y: auto;
     }
-    .submitButton {
-        /* border: 1px solid red; */
-        background-color: inherit;
-        position: relative;
-        align-self: center;
-        margin-top: 0px;
-        margin-left: 10px;
-        margin-bottom: 10px;
-    }
+
     .resultsContainer {
         width: auto;
         /* border: 1px solid red; */
@@ -414,13 +415,5 @@ body {
         align-self: center;
         /* border: 1px solid red; */
     }
-    .submitButton {
-        /* border: 1px solid red; */
-        color: #DBB9FC;
-        background-color: inherit;
-        position: relative;
-        align-self: flex-start;
-        margin-top: 25px;
-        box-shadow: 0rem .2rem 1rem .1rem #140030;
-    }
+
 }

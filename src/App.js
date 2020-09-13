@@ -17,11 +17,11 @@ function App() {
           	<Provider store={store}>
               <Box className ='topContainer'>
                   <Header />
-                  <PageToggle />
                   <Box className='filler' />
                   <QueryFilters />
               </Box >
               <Box className='bottomContainer'>
+                <PageToggle />
                 <PackList />
                 <SimfileResults />
               </Box>

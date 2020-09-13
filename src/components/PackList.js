@@ -104,6 +104,11 @@ export default ({ packList, isLoading, pageToggle}) => {
     };
     const handleChangePage = (event, newPage) => {
         setPage(newPage);
+        window.scrollTo({
+          top: 200,
+          left: 0,
+          behavior: 'smooth'
+        });
     };
     const handleChangeRowsPerPage = (event) => {
         setRowsPerPage(+event.target.value);
