@@ -3,17 +3,9 @@ import MusicNoteIcon from '@material-ui/icons/MusicNote';
 import PropTypes from 'prop-types';
 import { Table, TableBody, TableCell, TableContainer, TableHead, TablePagination, TableRow, TableSortLabel, List, ListItem, ExpansionPanel, ExpansionPanelSummary, ExpansionPanelDetails, Typography, Box} from '@material-ui/core';
 import _ from 'underscore';
-import CircularProgress from '@material-ui/core/CircularProgress';
+import LoadingWheel from './loadingWheel'
 
-export default ({ simfileResults, isLoading }) => {
-
-  function LoadingWheel () {
-    return (
-      <div className='loadingWheel'>
-        <CircularProgress />
-      </div>
-    )
-  }
+export default ({ simfileResults, isLoading, pageToggle}) => {
 
   var rows = []
   for (let [key, value] of Object.entries(simfileResults)) {
@@ -103,7 +95,7 @@ export default ({ simfileResults, isLoading }) => {
 
     function EnhancedTable() {
       const [order, setOrder] = React.useState('asc');
-      const [orderBy, setOrderBy] = React.useState('artist');
+      const [orderBy, setOrderBy] = React.useState(['pack', 'name']);
       const [page, setPage] = React.useState(0);
       const [rowsPerPage, setRowsPerPage] = React.useState(10);
 
@@ -114,6 +106,11 @@ export default ({ simfileResults, isLoading }) => {
       };
       const handleChangePage = (event, newPage) => {
           setPage(newPage);
+          window.scrollTo({
+            top: 200,
+            left: 0,
+            behavior: 'smooth'
+          });
       };
       const handleChangeRowsPerPage = (event) => {
           setRowsPerPage(+event.target.value);
@@ -194,7 +191,7 @@ export default ({ simfileResults, isLoading }) => {
     }
     return (
         <Box>
-          {isLoading === false ? <EnhancedTable /> : <LoadingWheel />}
+          {pageToggle === false ? isLoading === false ? <EnhancedTable /> : <LoadingWheel />: null}
         </Box>
     )
 }

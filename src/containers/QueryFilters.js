@@ -5,7 +5,8 @@ import {
   queryFilterValueChange,
   queryFilterFieldChange,
   queryFilterAdd,
-  queryFilterRemove
+  queryFilterRemove,
+  viewChange
 } from '../actions';
 
 const mapStateToProps = (state) => ({

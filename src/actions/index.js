@@ -18,6 +18,7 @@ export const backendQueryError = createAction('backend/query/error');
 
 export const submitQuery = (queryFilters) => (dispatch) => {
     dispatch(backendQueryStarted());
+    dispatch(viewChange(false))
     let url = API_URL + 'search/';
     let mappedFilters = Object.fromEntries(queryFilters.map((filter) => {
         let fieldName = QUERY_FIELDS_INVERTED[filter.field];
@@ -47,3 +48,35 @@ export const submitQuery = (queryFilters) => (dispatch) => {
         dispatch(backendQueryError(error));
     });
 }
+
+export const packListQueryStarted = createAction('packList/query/started');
+
+export const packListQueryDelivered = createAction('packList/query/delivered');
+
+export const packListQueryError = createAction('packList/query/error');
+
+export const packListQuery = () => (dispatch) => {
+  dispatch(packListQueryStarted());
+  let url = API_URL + 'list';
+  let query = JSON.stringify({"field": "pack.name"})
+  fetch(url, {
+    method: 'POST',
+    mode: 'cors',
+    body: query,
+    headers: {
+        'Content-Type': 'application/json'
+    }
+  }).then(response => response.json())
+  .then(data => {
+    console.log(data);
+    return data;
+  }).then(
+    data => {
+      dispatch(packListQueryDelivered(data));
+    }
+  ).catch(error => {
+    dispatch(packListQueryError(error));
+  });
+}
+
+export const viewChange = createAction('view/change');
