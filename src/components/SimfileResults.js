@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
+import {useDispatch} from 'react-redux';
 import MusicNoteIcon from '@material-ui/icons/MusicNote';
 import PropTypes from 'prop-types';
-import { Table, TableBody, TableCell, TableContainer, TableHead, TablePagination, TableRow, TableSortLabel, List, ListItem, ExpansionPanel, ExpansionPanelSummary, ExpansionPanelDetails, Typography, Box} from '@material-ui/core';
+import { Table, TableBody, TableCell, TableContainer, TableHead, TablePagination, TableRow, TableSortLabel, List, ListItem, ExpansionPanel, ExpansionPanelSummary, ExpansionPanelDetails, Typography, Box, Button} from '@material-ui/core';
 import _ from 'underscore';
-import LoadingWheel from './loadingWheel'
+import LoadingWheel from './loadingWheel';
+import { submitQuery } from '../actions';
 
-export default ({ simfileResults, isLoading, pageToggle}) => {
-
+export default ({ simfileResults, isLoading, pageToggle, queryFilters}) => {
+  const dispatch = useDispatch()
   var rows = []
   for (let [key, value] of Object.entries(simfileResults)) {
 
@@ -43,7 +45,7 @@ export default ({ simfileResults, isLoading, pageToggle}) => {
   }
 
   const headCells = [
-    {id: 'artist', disablePadding: true, label: 'Artist Name'},
+    {id: 'artist', disablePadding: true, label: 'Artist'},
     {id: 'name', disablePadding: true,  label: 'Track Name'},
     {id: 'bpm', disablePadding: true,  label: 'BPM'},
     {id: ['pack', 'name'], disablePadding: true, label: 'Pack Name'},
@@ -134,6 +136,7 @@ export default ({ simfileResults, isLoading, pageToggle}) => {
                                   <TableRow hover role="checkbox" key={row.songArtist}>
                                     {headCells.map((column) => {
                                       var value = _.property(column.id)(row);
+                                      const queryFilters =[{field: column.label, value: value}]
                                       var diffs = []
                                       for (const [difficulty, val] of Object.entries(row.difficultyMap)) {
                                         diffs.push([difficulty, val])
@@ -164,7 +167,11 @@ export default ({ simfileResults, isLoading, pageToggle}) => {
                                               </Typography>
                                             </ExpansionPanelDetails>
                                           </ExpansionPanel>
-                                          :
+                                          : column.id !=='bpm' ?
+                                          <Button type='submit' variant='text' onClick={(event) => {
+                                              event.preventDefault();
+                                              dispatch(submitQuery(queryFilters));
+                                          }}> {value}</Button> :
                                           <Typography>{value}</Typography>
                                             }
                                         </TableCell>
