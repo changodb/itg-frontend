@@ -139,7 +139,6 @@ export default ({ simfileResults, isLoading, pageToggle}) => {
                                         diffs.push([difficulty, val])
                                       }
                                       let sortedDiffs = _.sortBy(diffs, '1')
-                                      console.log(sortedDiffs)
                                       var difflist = sortedDiffs.map(
                                           ([difficulty, val]) => (
                                               <ListItem >
@@ -150,7 +149,7 @@ export default ({ simfileResults, isLoading, pageToggle}) => {
                                       return (
                                         <TableCell
                                             key={column.id}
-                                            size='small'
+                                            size='medium'
                                             >
                                           {column.id ==='difficultyMap' ?
                                           <ExpansionPanel className='difficultiesPanel'>
