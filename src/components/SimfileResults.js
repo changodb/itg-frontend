@@ -172,7 +172,10 @@ export default ({ simfileResults, isLoading, pageToggle, queryFilters}) => {
                                               event.preventDefault();
                                               dispatch(submitQuery(queryFilters));
                                           }}> {value}</Button> :
-                                          <Typography>{value}</Typography>
+                                          <Button type='submit' variant='text' onClick={(event) => {
+                                              event.preventDefault();
+                                              dispatch(submitQuery([{field: "Min BPM", value: value}]));
+                                          }}> {value}</Button>
                                             }
                                         </TableCell>
                                       );
