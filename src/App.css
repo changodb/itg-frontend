@@ -84,7 +84,6 @@ body {
 }
 .submitButton {
     /* border: 1px solid red; */
-    color: #DBB9FC;
     background-color: inherit;
     position: relative;
     align-self: flex-start;
@@ -94,7 +93,6 @@ body {
 }
 .packToggle {
     /* border: 1px solid red; */
-    color: #DBB9FC;
     background-color: inherit;
     position: relative;
     align-self: flex-start;
@@ -145,11 +143,17 @@ body {
     padding-right: 1px;
     color: #DBB9FC
 }
+.MuiExpansionPanelSummary-root {
+  min-height: 30px;
+}
 .MuiTableSortLabel-root.MuiTableSortLabel-active {
   color: #7c00f4;
 }
 .MuiTableSortLabel-root.MuiTableSortLabel-active.MuiTableSortLabel-root.MuiTableSortLabel-active .MuiTableSortLabel-icon {
   color: #7c00f4;
+}
+.MuiButton-label {
+  color: #DBB9FC
 }
 .MuiTypography-body1 {
     font-size: medium;
