@@ -137,7 +137,6 @@ export default ({ packList, isLoading, pageToggle, queryFilters}) => {
                             key={column.id}
                             size='medium'
                           >{(column.id === 'packName') ?
-
                           <Link href="#" color='inherit' onClick={(event) => {
                               event.preventDefault();
                               dispatch(submitQuery(queryFilters));
