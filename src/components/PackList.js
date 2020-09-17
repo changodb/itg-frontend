@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import {useDispatch} from 'react-redux';
 import MusicNoteIcon from '@material-ui/icons/MusicNote';
 import PropTypes from 'prop-types';
-import {Button, Table, TableBody, TableCell, TableContainer, TableHead, TablePagination, TableRow, TableSortLabel, Typography, Box } from '@material-ui/core';
+import {Link, Table, TableBody, TableCell, TableContainer, TableHead, TablePagination, TableRow, TableSortLabel, Typography, Box } from '@material-ui/core';
 import _ from 'underscore';
 import LoadingWheel from './loadingWheel'
 import { packListQuery, submitQuery } from '../actions'
@@ -138,10 +138,10 @@ export default ({ packList, isLoading, pageToggle, queryFilters}) => {
                             size='medium'
                           >{(column.id === 'packName') ?
 
-                          <Button type='submit' variant='text' onClick={(event) => {
+                          <Link href="#" color='inherit' onClick={(event) => {
                               event.preventDefault();
                               dispatch(submitQuery(queryFilters));
-                          }}> {value}</Button> :
+                          }}> {value}</Link> :
                           <Typography>{value}</Typography>}
                           </TableCell>
                         );
