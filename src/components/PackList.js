@@ -135,7 +135,7 @@ export default ({ packList, isLoading, pageToggle, queryFilters}) => {
                         return (
                           <TableCell
                             key={column.id}
-                            size='medium'
+                            size='small'
                           >{(column.id === 'packName') ?
 
                           <Link href="#" color='inherit' onClick={(event) => {

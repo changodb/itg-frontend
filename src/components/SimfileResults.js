@@ -152,7 +152,7 @@ export default ({ simfileResults, isLoading, pageToggle, queryFilters}) => {
                                       return (
                                         <TableCell
                                             key={column.id}
-                                            size='medium'
+                                            size='small'
                                             >
                                           {column.id ==='difficultyMap' ?
                                           <ExpansionPanel className='difficultiesPanel'>
