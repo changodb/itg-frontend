@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {useDispatch} from 'react-redux';
 import MusicNoteIcon from '@material-ui/icons/MusicNote';
 import PropTypes from 'prop-types';
-import { Table, TableBody, TableCell, TableContainer, TableHead, TablePagination, TableRow, TableSortLabel, List, ListItem, ExpansionPanel, ExpansionPanelSummary, ExpansionPanelDetails, Typography, Box, Button} from '@material-ui/core';
+import { Table, TableBody, TableCell, TableContainer, TableHead, TablePagination, TableRow, TableSortLabel, List, ListItem, ExpansionPanel, ExpansionPanelSummary, ExpansionPanelDetails, Typography, Box, Link} from '@material-ui/core';
 import _ from 'underscore';
 import LoadingWheel from './loadingWheel';
 import { submitQuery } from '../actions';
@@ -168,14 +168,14 @@ export default ({ simfileResults, isLoading, pageToggle, queryFilters}) => {
                                             </ExpansionPanelDetails>
                                           </ExpansionPanel>
                                           : column.id !=='bpm' ?
-                                          <Button type='submit' variant='text' onClick={(event) => {
+                                          <Link href="#" color='inherit' onClick={(event) => {
                                               event.preventDefault();
                                               dispatch(submitQuery(queryFilters));
-                                          }}> {value}</Button> :
-                                          <Button type='submit' variant='text' onClick={(event) => {
+                                          }}> {value}</Link> :
+                                          <Link href="#" color='inherit' onClick={(event) => {
                                               event.preventDefault();
                                               dispatch(submitQuery([{field: "Min BPM", value: value}]));
-                                          }}> {value}</Button>
+                                          }}> {value}</Link>
                                             }
                                         </TableCell>
                                       );
