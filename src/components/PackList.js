@@ -2,12 +2,12 @@ import React, {useEffect} from 'react';
 import {useDispatch} from 'react-redux';
 import MusicNoteIcon from '@material-ui/icons/MusicNote';
 import PropTypes from 'prop-types';
-import {Button, Table, TableBody, TableCell, TableContainer, TableHead, TablePagination, TableRow, TableSortLabel, Typography, Box } from '@material-ui/core';
+import {Link, Table, TableBody, TableCell, TableContainer, TableHead, TablePagination, TableRow, TableSortLabel, Typography, Box } from '@material-ui/core';
 import _ from 'underscore';
 import LoadingWheel from './loadingWheel'
-import { packListQuery } from '../actions'
+import { packListQuery, submitQuery } from '../actions'
 
-export default ({ packList, isLoading, pageToggle}) => {
+export default ({ packList, isLoading, pageToggle, queryFilters}) => {
   const dispatch = useDispatch()
 
   React.useEffect(() => dispatch(packListQuery()), [])
@@ -131,12 +131,18 @@ export default ({ packList, isLoading, pageToggle}) => {
                     <TableRow hover role="checkbox" key={row.packName}>
                       {headCells.map((column) => {
                         var value = _.property(column.id)(row);
+                        const queryFilters = [{field:"Pack Name", value: row.packName}]
                         return (
                           <TableCell
                             key={column.id}
                             size='medium'
-                          >
-                            <Typography>{value}</Typography>
+                          >{(column.id === 'packName') ?
+
+                          <Link href="#" color='inherit' onClick={(event) => {
+                              event.preventDefault();
+                              dispatch(submitQuery(queryFilters));
+                          }}> {value}</Link> :
+                          <Typography>{value}</Typography>}
                           </TableCell>
                         );
                       })}
