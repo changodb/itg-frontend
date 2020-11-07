@@ -1,16 +1,14 @@
 import React, {useEffect} from 'react';
-import {useDispatch} from 'react-redux';
 import MusicNoteIcon from '@material-ui/icons/MusicNote';
 import PropTypes from 'prop-types';
 import {Link, Table, TableBody, TableCell, TableContainer, TableHead, TablePagination, TableRow, TableSortLabel, Typography, Box } from '@material-ui/core';
 import _ from 'underscore';
 import LoadingWheel from './loadingWheel'
-import { packListQuery, submitQuery } from '../actions'
 
-export default ({ packList, isLoading, pageToggle, queryFilters}) => {
-  const dispatch = useDispatch()
 
-  React.useEffect(() => dispatch(packListQuery()), [])
+export default ({ packList, isLoading, pageToggle, queryFilters, packListQuery, submitQuery}) => {
+
+  React.useEffect(() => packListQuery(), [])
   var rows = []
 
   for (let [key, value] of Object.entries(packList)) {
@@ -140,7 +138,7 @@ export default ({ packList, isLoading, pageToggle, queryFilters}) => {
 
                           <Link href="#" color='inherit' onClick={(event) => {
                               event.preventDefault();
-                              dispatch(submitQuery(queryFilters));
+                              submitQuery(queryFilters);
                           }}> {value}</Link> :
                           <Typography>{value}</Typography>}
                           </TableCell>
