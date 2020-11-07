@@ -10,6 +10,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  packListQuery: () => dispatch(packListQuery())
+  packListQuery: () => dispatch(packListQuery()),
+  submitQuery: (queryFilters) => dispatch(submitQuery(queryFilters))
 });
-export default connect(mapStateToProps)(PackList);
+export default connect(mapStateToProps, mapDispatchToProps)(PackList);
